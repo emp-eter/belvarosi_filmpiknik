@@ -1,0 +1,3 @@
+# Components
+
+See ../README.md.

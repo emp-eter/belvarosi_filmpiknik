@@ -1,0 +1,24 @@
+.banner {
+  position: relative;
+  z-index: 45;
+  padding: 12px clamp(16px, 4vw, 34px);
+  background: var(--accent);
+  color: var(--accent-ink);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 16px;
+  align-items: baseline;
+  justify-content: center;
+  text-align: center;
+}
+.label {
+  font-size: 11px;
+  font-weight: var(--weight-bold);
+  letter-spacing: 2.4px;
+  text-transform: uppercase;
+}
+.text {
+  font-size: 14.5px;
+  font-weight: var(--weight-medium);
+  line-height: 1.5;
+}

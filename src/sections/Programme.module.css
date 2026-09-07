@@ -1,0 +1,84 @@
+.section {
+  padding: var(--section-y) 0;
+}
+
+.head {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 18px;
+  flex-wrap: wrap;
+}
+.title {
+  margin: 0;
+  font-size: var(--size-h2);
+  font-weight: var(--weight-bold);
+  letter-spacing: var(--tracking-heading);
+}
+
+.controls {
+  margin-top: clamp(20px, 3vw, 30px);
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+.tabs {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+.filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 18px 34px;
+}
+.filterGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.filterLabel {
+  font-size: 10.5px;
+  font-weight: var(--weight-bold);
+  letter-spacing: 2.4px;
+  text-transform: uppercase;
+  color: var(--text-subtle);
+}
+.chips {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+/* Vízszintes kártyaszalag, snap-pel. A padding a gutter, hogy a kártyák
+   a tartalommal egy vonalban induljanak, de a szalag szélig fusson. */
+.strip {
+  margin-top: clamp(20px, 3vw, 30px);
+  display: flex;
+  gap: clamp(14px, 2vw, 20px);
+  overflow-x: auto;
+  /* A szalag szélig fut, de az első kártya a tartalomoszlophoz igazodik,
+     széles képernyőn is (a container 1200px-es, középre zárt). */
+  --strip-inset: max(var(--gutter-x), calc((100% - var(--measure)) / 2 + var(--gutter-x)));
+  padding: 4px var(--strip-inset) 20px;
+  scroll-snap-type: x mandatory;
+  scroll-padding-inline: var(--strip-inset);
+}
+
+.empty {
+  padding-top: 6px;
+}
+.emptyText {
+  margin: 0 0 14px;
+  font-size: 15px;
+  line-height: 1.6;
+  color: var(--text-muted);
+}
+
+.hint {
+  margin: 0;
+  font-size: 12.5px;
+  letter-spacing: 1.6px;
+  text-transform: uppercase;
+  color: var(--text-subtle);
+}

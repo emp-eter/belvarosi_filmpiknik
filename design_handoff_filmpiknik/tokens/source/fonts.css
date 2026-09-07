@@ -1,0 +1,8 @@
+/* Webfonts are served from Google Fonts. Self-host by dropping the .woff2 files
+   into assets/fonts/ and replacing these imports with @font-face rules. */
+@import url("https://fonts.googleapis.com/css2?family=Kaushan+Script&family=Space+Grotesk:wght@400;500;600;700&display=swap");
+
+:root {
+  --font-display: "Kaushan Script", "Segoe Script", cursive;
+  --font-ui: "Space Grotesk", "Helvetica Neue", Helvetica, sans-serif;
+}

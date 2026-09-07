@@ -1,0 +1,22 @@
+:root {
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 20px;
+  --space-6: 24px;
+  --space-8: 34px;
+  --space-10: 44px;
+  --space-12: 56px;
+
+  /* Fluid rhythm: sections and gutters breathe with the viewport. */
+  --section-y: clamp(44px, 7vw, 92px);
+  --gutter-x: clamp(18px, 4vw, 34px);
+  --card-pad: clamp(24px, 3.4vw, 38px);
+  --card-pad-sm: clamp(18px, 2.6vw, 24px);
+  --stack-gap: clamp(20px, 3vw, 30px);
+  --grid-gap: clamp(18px, 3vw, 34px);
+
+  --measure: 1200px;
+  --measure-narrow: 780px;
+}

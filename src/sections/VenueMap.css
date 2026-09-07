@@ -1,0 +1,125 @@
+/* Globális (nem module) CSS: a Leaflet saját osztályait kell felülírni. */
+
+.fp-map {
+  position: absolute;
+  inset: 0;
+  background: var(--surface-base);
+  font-family: var(--font-ui);
+}
+.fp-map .leaflet-tile-pane {
+  filter: var(--map-tile-filter);
+}
+
+.fp-pin {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: var(--accent);
+  color: var(--accent-ink);
+  font-size: 14px;
+  font-weight: var(--weight-bold);
+  box-shadow: var(--halo-gold);
+}
+
+.fp-map .leaflet-popup-content-wrapper {
+  background: var(--wine-750);
+  color: var(--text-primary);
+  border-radius: 10px;
+  border: 1px solid rgba(240, 212, 138, 0.4);
+  box-shadow: none;
+}
+.fp-map .leaflet-popup-tip {
+  background: var(--wine-750);
+  box-shadow: none;
+}
+.fp-map .leaflet-popup-content {
+  margin: 12px 14px;
+  width: 268px !important;
+  font-size: 13.5px;
+  line-height: 1.5;
+}
+.fp-map .leaflet-popup-close-button {
+  color: var(--text-subtle);
+}
+.fp-map .leaflet-popup-close-button:hover {
+  color: var(--text-primary);
+}
+
+.fp-name {
+  display: block;
+  font-size: 15px;
+  font-weight: var(--weight-bold);
+  margin-bottom: 3px;
+}
+.fp-when {
+  display: block;
+  font-size: 11px;
+  font-weight: var(--weight-bold);
+  letter-spacing: 1.6px;
+  text-transform: uppercase;
+  color: var(--text-accent);
+}
+.fp-addr {
+  display: block;
+  margin-top: 4px;
+  font-size: 12.5px;
+  color: var(--text-subtle);
+}
+/* A görgethető lista fölött: a kattintható link sose legyen a levágott rész. */
+.fp-link {
+  display: inline-block;
+  margin-top: 8px;
+  font-size: 10.5px;
+  font-weight: var(--weight-bold);
+  letter-spacing: 1.6px;
+  text-transform: uppercase;
+  color: var(--text-accent) !important;
+}
+/* A popup egy levágott térképdobozban ül, ami 320px-nél is lehet alacsonyabb:
+   a lista a viewporthoz képest van maximálva, nem fix pixelhez. */
+.fp-prog {
+  margin-top: 8px;
+  max-height: min(190px, 34vh);
+  overflow-y: auto;
+}
+.fp-row {
+  display: grid;
+  grid-template-columns: 92px 1fr;
+  gap: 8px;
+  align-items: baseline;
+  padding: 6px 0;
+  border-top: 1px solid rgba(240, 212, 138, 0.16);
+}
+.fp-time {
+  font-size: 10px;
+  font-weight: var(--weight-bold);
+  letter-spacing: 1.4px;
+  text-transform: uppercase;
+  color: var(--rose-300);
+  font-variant-numeric: tabular-nums;
+}
+.fp-title {
+  font-size: 13px;
+  line-height: 1.4;
+  color: var(--text-primary);
+}
+
+.fp-map .leaflet-control-attribution {
+  background: rgba(46, 10, 27, 0.72) !important;
+  color: var(--text-subtle) !important;
+  font-size: 10px !important;
+}
+.fp-map .leaflet-control-attribution a {
+  color: var(--text-accent) !important;
+}
+.fp-map .leaflet-bar a {
+  background: var(--wine-750) !important;
+  color: var(--text-primary) !important;
+  border-color: rgba(240, 212, 138, 0.3) !important;
+}
+.fp-map .leaflet-bar a:hover {
+  background: var(--wine-500) !important;
+}

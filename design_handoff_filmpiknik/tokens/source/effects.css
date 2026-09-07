@@ -1,0 +1,23 @@
+:root {
+  --radius-pill: 999px;
+  --radius-sm: 6px;
+  --radius-md: 12px;
+  --radius-lg: 14px;
+  --radius-xl: 18px;
+
+  --border-thin: 1px solid var(--border-hairline);
+  --border-gold: 1px solid var(--border-accent);
+  --border-gold-strong: 1px solid var(--border-accent-strong);
+  --border-dashed-gold: 1px dashed var(--border-accent-strong);
+
+  /* Shadows are rare: the brand separates by value and gold hairline, not by drop shadow.
+     The two that exist are a text shadow over imagery and a pin halo. */
+  --shadow-hero-text: 0 14px 40px rgba(0, 0, 0, 0.45);
+  --halo-gold: 0 0 0 6px rgba(240, 212, 138, 0.22);
+
+  --blur-header: blur(12px);
+  --scrim-header: rgba(46, 10, 27, 0.9);
+
+  /* The dark-wine map treatment applied to OSM raster tiles. */
+  --map-tile-filter: grayscale(1) invert(1) brightness(.82) sepia(.55) hue-rotate(300deg) saturate(2.1) contrast(.95);
+}

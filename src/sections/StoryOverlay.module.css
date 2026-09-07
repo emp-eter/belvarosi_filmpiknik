@@ -1,0 +1,137 @@
+.backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 90;
+  background: rgba(20, 4, 12, 0.86);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  overflow-y: auto;
+}
+.dialog {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 18px;
+  outline: none;
+}
+
+/* Magasságvezérelt 9:16 kártya: a flex overlay nem tudja összenyomni. */
+.card {
+  position: relative;
+  flex: 0 0 auto;
+  height: min(66vh, 600px);
+  max-height: 600px;
+  width: auto;
+  aspect-ratio: 9 / 16;
+  max-width: 88vw;
+  container-type: size;
+  border-radius: 20px;
+  overflow: hidden;
+  background: var(--grad-night);
+  border: 1px solid rgba(240, 212, 138, 0.4);
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.6);
+}
+.townscape {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 42%;
+  background-image: url("/assets/townscape.png");
+  background-size: cover;
+  background-position: center bottom;
+  opacity: 0.4;
+  mix-blend-mode: screen;
+}
+.cardInner {
+  position: absolute;
+  inset: 0;
+  padding: 8% 8% 9%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+/* Minden betűméret cqh-ban, px-alsó korláttal: 11px alá sosem megy. */
+.wordmark {
+  font-family: var(--font-display);
+  font-size: 7cqh;
+  line-height: 1;
+  color: var(--text-primary);
+}
+.dates {
+  margin-top: 1.6cqh;
+  font-size: max(11px, 2.1cqh);
+  font-weight: var(--weight-bold);
+  letter-spacing: 0.28cqh;
+  text-transform: uppercase;
+  color: var(--text-accent);
+}
+.when {
+  font-size: max(11px, 2.1cqh);
+  font-weight: var(--weight-bold);
+  letter-spacing: 0.26cqh;
+  text-transform: uppercase;
+  color: var(--text-accent);
+}
+.title {
+  margin-top: 1.4cqh;
+  font-size: max(24px, 4.6cqh);
+  font-weight: var(--weight-bold);
+  line-height: 1.08;
+  letter-spacing: -0.06cqh;
+  color: var(--text-primary);
+  text-wrap: pretty;
+}
+.venue {
+  margin-top: 1.6cqh;
+  font-size: max(13px, 2.4cqh);
+  line-height: 1.45;
+  color: var(--rose-300);
+}
+.foot {
+  display: flex;
+  align-items: center;
+  gap: 1.6cqh;
+  flex-wrap: wrap;
+}
+.free {
+  padding: 1.1cqh 2.2cqh;
+  border-radius: var(--radius-pill);
+  background: var(--accent);
+  color: var(--accent-ink);
+  font-size: max(11px, 2cqh);
+  font-weight: var(--weight-bold);
+  letter-spacing: 0.24cqh;
+  text-transform: uppercase;
+}
+.site {
+  font-size: max(11px, 2cqh);
+  font-weight: var(--weight-bold);
+  letter-spacing: 0.24cqh;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+}
+.close {
+  border-color: rgba(255, 243, 224, 0.4);
+}
+.note {
+  margin: 0;
+  max-width: 340px;
+  text-align: center;
+  font-size: 12px;
+  line-height: 1.6;
+  color: var(--text-subtle);
+}

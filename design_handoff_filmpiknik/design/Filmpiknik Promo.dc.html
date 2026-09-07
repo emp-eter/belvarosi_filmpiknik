@@ -1,0 +1,638 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<title>Belvárosi Filmpiknik 2026 · Eger, szeptember 17–19.</title>
+<meta name="description" content="Három este, három helyszín, tizenegy film Eger belvárosában. Közönségtalálkozó Herendi Gáborral és Törőcsik Franciskával. Minden program ingyenes." />
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="Belvárosi Filmpiknik" />
+<meta property="og:title" content="Belvárosi Filmpiknik 2026 · Eger, szeptember 17–19." />
+<meta property="og:description" content="Három este, három helyszín, tizenegy film Eger belvárosában. Minden program ingyenes." />
+<meta property="og:image" content="assets/townscape.png" />
+<meta property="og:locale" content="hu_HU" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="theme-color" content="#2E0A1B" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous" />
+<link href="https://fonts.googleapis.com/css2?family=Kaushan+Script&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<style>
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body { margin: 0; background: #2E0A1B; font-family: 'Space Grotesk', Helvetica, sans-serif; color: #FFF3E0; -webkit-font-smoothing: antialiased; }
+  a { color: #F0D48A; text-decoration: none; }
+  a:hover { color: #FFF8EA; }
+  ::-webkit-scrollbar { height: 8px; }
+  ::-webkit-scrollbar-thumb { background: rgba(240,212,138,0.4); border-radius: 8px; }
+  @keyframes fpGlow { 0%,100% { opacity: .5; } 50% { opacity: .85; } }
+  @keyframes fpReveal { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: none; } }
+  @media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation-duration: .001s !important; animation-delay: 0s !important; transition: none !important; } }
+</style>
+</helmet>
+
+<div style="max-width: 100%; overflow-x: hidden;">
+
+  <sc-if value="{{ rainAlert }}" hint-placeholder-val="{{ false }}">
+    <div role="status" style="position: relative; z-index: 45; padding: 12px clamp(16px, 4vw, 34px); background: #F0D48A; color: #2E0A1B; display: flex; flex-wrap: wrap; gap: 8px 16px; align-items: baseline; justify-content: center; text-align: center;">
+      <span style="font-size: 11px; font-weight: 700; letter-spacing: 2.4px; text-transform: uppercase;">Esőhelyszín</span>
+      <span style="font-size: 14.5px; font-weight: 500; line-height: 1.5;">{{ rainAlert }}</span>
+    </div>
+  </sc-if>
+
+  <header style="position: sticky; top: 0; z-index: 40; background: rgba(46,10,27,0.9); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(240,212,138,0.16);">
+    <div style="max-width: 1200px; margin: 0 auto; padding: 13px clamp(16px, 4vw, 34px); display: flex; align-items: center; justify-content: space-between; gap: 14px; flex-wrap: wrap;">
+      <a href="#top" style="font-family: 'Kaushan Script', cursive; font-size: clamp(19px, 2.6vw, 25px); color: #FFF8EA;">Filmpiknik</a>
+      <nav style="display: flex; gap: clamp(10px, 2vw, 22px); align-items: center; flex-wrap: wrap;">
+        <a href="#filmek" style="font-size: 12px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase;">Filmek</a>
+        <a href="#terkep" style="font-size: 12px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase;">Térkép</a>
+        <a href="#belepo" style="font-size: 12px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase;">Belépő</a>
+        <a href="#hirlevel" style="padding: 9px 16px; border-radius: 999px; background: #F0D48A; color: #2E0A1B; font-size: 12px; font-weight: 700; letter-spacing: 1.6px; text-transform: uppercase;" style-hover="background: #FFF8EA;">Emlékeztető</a>
+      </nav>
+    </div>
+  </header>
+
+  <section id="top" style="position: relative; min-height: clamp(560px, 90vh, 940px); display: flex; align-items: flex-end; overflow: hidden;">
+    <div style="position: absolute; inset: 0; background: linear-gradient(180deg, #6B1030 0%, #4A0C22 55%, #2E0A1B 100%);"></div>
+    <div style="position: absolute; left: 0; right: 0; bottom: 0; height: clamp(200px, 34vw, 420px); background-image: url('assets/townscape.png'); background-size: cover; background-position: center bottom; opacity: 0.4; mix-blend-mode: screen;"></div>
+    <div style="position: absolute; left: 50%; top: 6%; width: min(820px, 94vw); height: clamp(220px, 40vw, 380px); transform: translateX(-50%); background: radial-gradient(closest-side, rgba(240,212,138,0.32), transparent); animation: fpGlow 7s ease-in-out infinite;"></div>
+    <div style="position: absolute; inset: 0; background: linear-gradient(180deg, rgba(46,10,27,0.12) 0%, rgba(46,10,27,0.4) 55%, #2E0A1B 100%);"></div>
+    <div style="position: relative; width: 100%; max-width: 1200px; margin: 0 auto; padding: clamp(44px, 8vw, 96px) clamp(18px, 4vw, 34px) clamp(34px, 6vw, 68px);">
+      <p style="animation: fpReveal .8s both; animation-delay: 0ms; margin: 0 0 14px; font-size: clamp(11px, 1.4vw, 13px); font-weight: 700; letter-spacing: clamp(2px, 0.6vw, 5px); text-transform: uppercase; color: #F0D48A;">Eger történelmi belvárosa · 3 este · 3 helyszín · 11 film</p>
+      <h1 style="animation: fpReveal .8s both; animation-delay: 110ms; margin: 0 0 clamp(14px, 2.4vw, 22px); font-family: 'Kaushan Script', cursive; font-weight: 400; font-size: clamp(44px, 11vw, 128px); line-height: 0.96; color: #FFF8EA; text-shadow: 0 14px 40px rgba(0,0,0,0.45);">Belvárosi<br />Filmpiknik</h1>
+      <div style="animation: fpReveal .8s both; animation-delay: 220ms; display: flex; flex-wrap: wrap; gap: clamp(12px, 2vw, 22px); align-items: center;">
+        <span style="font-size: clamp(18px, 3vw, 32px); font-weight: 700; letter-spacing: -0.5px; color: #FFF8EA;">2026. SZEPT. 17–19.</span>
+        <span style="width: 1px; height: 26px; background: rgba(255,243,224,0.3);"></span>
+        <span style="font-size: clamp(12px, 1.6vw, 14px); font-weight: 700; letter-spacing: 2.6px; text-transform: uppercase; color: #E9B0C0;">Naplemente után</span>
+      </div>
+
+      <div style="animation: fpReveal .8s both; animation-delay: 330ms; margin-top: clamp(24px, 4vw, 40px); display: flex; flex-wrap: wrap; align-items: center; gap: clamp(10px, 2vw, 18px);">
+        <sc-for list="{{ countdown }}" as="c" hint-placeholder-count="4">
+          <div style="min-width: clamp(74px, 11vw, 108px); padding: clamp(12px, 1.8vw, 18px) clamp(10px, 1.6vw, 16px); border-radius: 12px; background: rgba(255,243,224,0.07); border: 1px solid rgba(240,212,138,0.28); text-align: center;">
+            <div style="font-size: clamp(24px, 4vw, 40px); font-weight: 700; letter-spacing: -1px; line-height: 1; color: #F0D48A; font-variant-numeric: tabular-nums;">{{ c.v }}</div>
+            <div style="margin-top: 6px; font-size: 10.5px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: #DBB6C1;">{{ c.l }}</div>
+          </div>
+        </sc-for>
+        <span style="font-size: 12px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: #C98FA3;">a nyitóestig</span>
+      </div>
+
+      <div style="animation: fpReveal .8s both; animation-delay: 440ms; margin-top: clamp(24px, 4vw, 38px); display: flex; flex-wrap: wrap; gap: 12px;">
+        <a href="#filmek" style="padding: 16px 28px; border-radius: 6px; background: #F0D48A; color: #2E0A1B; font-size: 12.5px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase;" style-hover="background: #FFF8EA;">Filmek</a>
+        <a href="#hirlevel" style="padding: 16px 28px; border-radius: 6px; border: 1px solid rgba(255,243,224,0.45); color: #FFF3E0; font-size: 12.5px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase;" style-hover="background: rgba(255,243,224,0.1);">Szólj, ha kezdődik</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="filmek" style="padding: clamp(44px, 7vw, 92px) 0;">
+    <div style="max-width: 1200px; margin: 0 auto; padding: 0 clamp(18px, 4vw, 34px); display: flex; align-items: flex-end; justify-content: space-between; gap: 18px; flex-wrap: wrap;">
+      <h2 style="animation: fpReveal .8s both; animation-delay: 0ms; margin: 0; font-size: clamp(26px, 4.6vw, 48px); font-weight: 700; letter-spacing: -1px;">A műsor</h2>
+      <button type="button" onClick="{{ addWholeFestival }}" style="animation: fpReveal .8s both; animation-delay: 60ms; display: flex; align-items: center; gap: 9px; padding: 12px 20px; border-radius: 999px; cursor: pointer; background: transparent; border: 1px solid rgba(240,212,138,0.45); color: #F0D48A; font-family: 'Space Grotesk', sans-serif; font-size: 11.5px; font-weight: 700; letter-spacing: 1.8px; text-transform: uppercase;" style-hover="background: rgba(240,212,138,0.14); border-color: #F0D48A;">
+        <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" aria-hidden="true"><path d="M4 6h16v15H4zM4 10h16M9 3v4M15 3v4"></path></svg>
+        Teljes fesztivál a naptáramba
+      </button>
+    </div>
+
+    <div style="max-width: 1200px; margin: clamp(20px, 3vw, 30px) auto 0; padding: 0 clamp(18px, 4vw, 34px); display: flex; flex-direction: column; gap: 14px;">
+      <div style="animation: fpReveal .8s both; animation-delay: 110ms; display: flex; gap: 8px; flex-wrap: wrap;">
+        <sc-for list="{{ dayTabs }}" as="t" hint-placeholder-count="3">
+          <button type="button" onClick="{{ t.select }}" style="{{ t.style }}">{{ t.label }}</button>
+        </sc-for>
+      </div>
+      <div style="animation: fpReveal .8s both; animation-delay: 160ms; display: flex; flex-wrap: wrap; gap: 18px 34px;">
+        <div style="display: flex; flex-direction: column; gap: 8px;">
+          <span style="font-size: 10.5px; font-weight: 700; letter-spacing: 2.4px; text-transform: uppercase; color: #C98FA3;">Helyszín</span>
+          <div style="display: flex; gap: 8px; flex-wrap: wrap;">
+            <sc-for list="{{ venueChips }}" as="c" hint-placeholder-count="4">
+              <button type="button" onClick="{{ c.select }}" style="{{ c.style }}">{{ c.label }}</button>
+            </sc-for>
+          </div>
+        </div>
+        <div style="display: flex; flex-direction: column; gap: 8px;">
+          <span style="font-size: 10.5px; font-weight: 700; letter-spacing: 2.4px; text-transform: uppercase; color: #C98FA3;">Jelleg</span>
+          <div style="display: flex; gap: 8px; flex-wrap: wrap;">
+            <sc-for list="{{ tagChips }}" as="c" hint-placeholder-count="4">
+              <button type="button" onClick="{{ c.select }}" style="{{ c.style }}">{{ c.label }}</button>
+            </sc-for>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div ref="{{ stripRef }}" style="margin-top: clamp(20px, 3vw, 30px); display: flex; gap: clamp(14px, 2vw, 20px); overflow-x: auto; padding: 4px clamp(18px, 4vw, 34px) 20px; scroll-snap-type: x mandatory;">
+      <sc-for list="{{ films }}" as="f" hint-placeholder-count="5">
+        <article style="scroll-snap-align: start; flex: 0 0 clamp(250px, 74vw, 316px); border-radius: 14px; overflow: hidden; background: linear-gradient(180deg, rgba(255,243,224,0.09), rgba(255,243,224,0.03)); border: 1px solid rgba(240,212,138,0.22); display: flex; flex-direction: column; transition: transform .2s ease, border-color .2s ease;" style-hover="transform: translateY(-6px); border-color: rgba(240,212,138,0.6);">
+          <div style="height: 8px; background: repeating-linear-gradient(90deg, #F0D48A 0 12px, transparent 12px 24px);"></div>
+          <div style="padding: clamp(18px, 2.6vw, 24px); display: flex; flex-direction: column; gap: 11px; flex: 1;">
+            <span style="font-size: 11px; font-weight: 700; letter-spacing: 2.2px; text-transform: uppercase; color: #F0D48A;">{{ f.day }} · {{ f.time }}</span>
+            <h3 style="margin: 0; font-size: clamp(19px, 2.6vw, 24px); font-weight: 700; line-height: 1.15; color: #FFF8EA;">{{ f.title }}</h3>
+            <div style="display: flex; flex-wrap: wrap; gap: 6px;">
+              <sc-for list="{{ f.badges }}" as="b" hint-placeholder-count="3">
+                <span style="padding: 4px 9px; border-radius: 999px; background: rgba(240,212,138,0.14); border: 1px solid rgba(240,212,138,0.3); font-size: 10.5px; font-weight: 700; letter-spacing: 1.4px; text-transform: uppercase; color: #F0D48A;">{{ b.label }}</span>
+              </sc-for>
+            </div>
+            <p style="margin: 0; font-size: 13.5px; line-height: 1.55; color: #DBB6C1; flex: 1; text-wrap: pretty;">{{ f.sub }}</p>
+            <span style="font-size: 11.5px; font-weight: 700; letter-spacing: 1.8px; text-transform: uppercase; color: #E9B0C0;">{{ f.venue }}</span>
+            <div style="position: relative; display: flex; gap: 8px; flex-wrap: wrap; padding-top: 4px;">
+              <button type="button" onClick="{{ f.toggleCal }}" aria-expanded="{{ f.calOpen }}" title="Naptárba mentés" style="display: flex; align-items: center; gap: 7px; padding: 10px 14px; border-radius: 999px; cursor: pointer; background: rgba(240,212,138,0.14); border: 1px solid rgba(240,212,138,0.34); color: #F0D48A; font-family: 'Space Grotesk', sans-serif; font-size: 10.5px; font-weight: 700; letter-spacing: 1.6px; text-transform: uppercase;" style-hover="background: #F0D48A; color: #2E0A1B;">
+                <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M4 6h16v15H4zM4 10h16M9 3v4M15 3v4"></path></svg>
+                Naptárba
+              </button>
+              <sc-if value="{{ f.calOpen }}" hint-placeholder-val="{{ false }}">
+                <div style="position: absolute; z-index: 20; left: 0; bottom: calc(100% + 8px); min-width: 210px; padding: 8px; border-radius: 12px; background: #430F26; border: 1px solid rgba(240,212,138,0.45); box-shadow: 0 20px 44px rgba(20,4,12,0.6); display: flex; flex-direction: column; gap: 2px; animation: fpReveal .18s both;">
+                  <a href="{{ f.googleUrl }}" target="_blank" rel="noopener" onClick="{{ f.closeCal }}" style="padding: 11px 12px; border-radius: 8px; font-size: 13px; font-weight: 500; color: #FFF8EA;" style-hover="background: rgba(240,212,138,0.16);">Google Naptár</a>
+                  <a href="{{ f.outlookUrl }}" target="_blank" rel="noopener" onClick="{{ f.closeCal }}" style="padding: 11px 12px; border-radius: 8px; font-size: 13px; font-weight: 500; color: #FFF8EA;" style-hover="background: rgba(240,212,138,0.16);">Outlook</a>
+                  <button type="button" onClick="{{ f.addToCalendar }}" style="text-align: left; padding: 11px 12px; border-radius: 8px; border: 0; cursor: pointer; background: transparent; color: #FFF8EA; font-family: 'Space Grotesk', sans-serif; font-size: 13px; font-weight: 500;" style-hover="background: rgba(240,212,138,0.16);">Apple Naptár / .ics fájl</button>
+                </div>
+              </sc-if>
+              <button type="button" onClick="{{ f.openStory }}" title="Megosztás" style="display: flex; align-items: center; gap: 7px; padding: 10px 14px; border-radius: 999px; cursor: pointer; background: transparent; border: 1px solid rgba(255,243,224,0.28); color: #FFF3E0; font-family: 'Space Grotesk', sans-serif; font-size: 10.5px; font-weight: 700; letter-spacing: 1.6px; text-transform: uppercase;" style-hover="background: rgba(255,243,224,0.12);">
+                <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 15V4M8 8l4-4 4 4M5 14v5h14v-5"></path></svg>
+                Megosztás
+              </button>
+            </div>
+          </div>
+        </article>
+      </sc-for>
+    </div>
+
+    <sc-if value="{{ noMatches }}" hint-placeholder-val="{{ false }}">
+      <div style="max-width: 1200px; margin: 0 auto; padding: 6px clamp(18px, 4vw, 34px) 0;">
+        <p style="margin: 0 0 14px; font-size: 15px; line-height: 1.6; color: #DBB6C1;">Ezen a napon nincs a szűrésnek megfelelő program.</p>
+        <button type="button" onClick="{{ clearFilters }}" style="padding: 12px 20px; border-radius: 999px; cursor: pointer; background: #F0D48A; border: 0; color: #2E0A1B; font-family: 'Space Grotesk', sans-serif; font-size: 11px; font-weight: 700; letter-spacing: 1.8px; text-transform: uppercase;">Szűrők törlése</button>
+      </div>
+    </sc-if>
+
+    <sc-if value="{{ stripScrollable }}" hint-placeholder-val="{{ false }}">
+      <p style="max-width: 1200px; margin: 0 auto; padding: 0 clamp(18px, 4vw, 34px); font-size: 12.5px; letter-spacing: 1.6px; text-transform: uppercase; color: #C98FA3;">Húzd oldalra a kártyákat →</p>
+    </sc-if>
+  </section>
+
+  <section id="terkep" style="padding: clamp(44px, 7vw, 92px) clamp(18px, 4vw, 34px); background: linear-gradient(180deg, #3A0D22, #2E0A1B);">
+    <div style="max-width: 1200px; margin: 0 auto;">
+      <h2 style="animation: fpReveal .8s both; animation-delay: 0ms; margin: 0 0 10px; font-size: clamp(26px, 4.6vw, 48px); font-weight: 700; letter-spacing: -1px;">Három helyszín, három hangulat</h2>
+      <p style="animation: fpReveal .8s both; animation-delay: 110ms; margin: 0 0 clamp(24px, 3.6vw, 40px); max-width: 620px; font-size: clamp(14.5px, 1.8vw, 17px); line-height: 1.6; color: #DBB6C1; text-wrap: pretty;">A Dobó tér a fesztivál szíve, a Kertmozi és az Agria Park udvara innen 10–15 perc séta. Vidd az ujjad a helyszínekre a teljes műsorért.</p>
+
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: clamp(18px, 3vw, 34px); align-items: start;">
+        <div style="animation: fpReveal .8s both; animation-delay: 220ms; position: relative; border-radius: 18px; overflow: hidden; background: #40101F; border: 1px solid rgba(240,212,138,0.24); aspect-ratio: 4 / 3; min-height: 380px;">
+          <iframe src="map.html" title="Helyszínek térképe" loading="lazy" style="position: absolute; inset: 0; width: 100%; height: 100%; border: 0; display: block;"></iframe>
+        </div>
+
+        <div style="display: flex; flex-direction: column; gap: 10px;">
+          <sc-for list="{{ venues }}" as="v" hint-placeholder-count="3">
+            <div role="button" tabindex="0" aria-expanded="{{ v.open }}" onMouseEnter="{{ v.enter }}" onMouseLeave="{{ v.leave }}" onFocus="{{ v.enter }}" onBlur="{{ v.leave }}" onClick="{{ v.toggle }}" onKeyDown="{{ v.keyDown }}" style="animation: fpReveal .8s both; animation-delay: 330ms; position: relative; z-index: {{ v.z }}; padding: clamp(18px, 2.6vw, 24px); background: #2E0A1B; border: 1px solid rgba(240,212,138,0.22); border-radius: 14px; display: flex; gap: 16px; align-items: flex-start; cursor: pointer; outline: none; transition: border-color .18s ease, transform .18s ease;" style-hover="border-color: rgba(240,212,138,0.6); transform: translateY(-2px);" style-focus="border-color: #F0D48A; box-shadow: 0 0 0 3px rgba(240,212,138,0.25);">
+              <span style="flex: 0 0 auto; width: 34px; height: 34px; border-radius: 50%; background: #F0D48A; color: #2E0A1B; font-size: 14px; font-weight: 700; display: flex; align-items: center; justify-content: center;">{{ v.no }}</span>
+              <div style="flex: 1;">
+                <div style="display: flex; align-items: center; gap: 10px;">
+                  <svg viewBox="0 0 24 24" width="21" height="21" fill="none" stroke="#F0D48A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="flex: 0 0 auto;" aria-hidden="true">
+                    <path d="{{ v.icon }}"></path>
+                  </svg>
+                  <h3 style="margin: 0; font-size: clamp(17px, 2.2vw, 21px); font-weight: 700; color: #FFF8EA;">{{ v.name }}</h3>
+                </div>
+                <div style="margin-top: 6px; font-size: 11.5px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: #F0D48A;">{{ v.when }}</div>
+                <div style="margin-top: 4px; font-size: 13px; line-height: 1.5; color: #C98FA3;">{{ v.address }}</div>
+                <p style="margin: 10px 0 0; font-size: 14px; line-height: 1.6; color: #DBB6C1;">{{ v.desc }}</p>
+                <div style="margin-top: 12px; font-size: 11px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: #C98FA3;">{{ v.hint }}</div>
+              </div>
+              <sc-if value="{{ v.open }}" hint-placeholder-val="{{ false }}">
+                <div style="position: absolute; z-index: 30; left: 12px; right: 12px; top: calc(100% - 8px); padding: 18px 20px 16px; border-radius: 14px; background: #430F26; border: 1px solid rgba(240,212,138,0.45); box-shadow: 0 24px 60px rgba(20,4,12,0.6); animation: fpReveal .22s both;">
+                  <div style="position: absolute; top: -6px; left: 34px; width: 11px; height: 11px; background: #430F26; border-left: 1px solid rgba(240,212,138,0.45); border-top: 1px solid rgba(240,212,138,0.45); transform: rotate(45deg);"></div>
+                  <div style="display: flex; flex-wrap: wrap; gap: 10px; justify-content: space-between; align-items: baseline;">
+                    <div style="font-size: 10.5px; font-weight: 700; letter-spacing: 2.6px; text-transform: uppercase; color: #F0D48A;">A teljes műsor itt</div>
+                    <a href="{{ v.mapsLink }}" target="_blank" rel="noopener" style="font-size: 10.5px; font-weight: 700; letter-spacing: 1.6px; text-transform: uppercase;">Útvonal →</a>
+                  </div>
+                  <div style="margin-top: 12px; display: flex; flex-direction: column; gap: 2px; max-height: 300px; overflow-y: auto;">
+                    <sc-for list="{{ v.events }}" as="e" hint-placeholder-count="4">
+                      <div style="display: grid; grid-template-columns: 108px 1fr; gap: 12px; align-items: baseline; padding: 7px 0; border-top: 1px solid rgba(240,212,138,0.14);">
+                        <span style="font-size: 10.5px; font-weight: 700; letter-spacing: 1.6px; text-transform: uppercase; color: #E9B0C0; font-variant-numeric: tabular-nums;">{{ e.when }}</span>
+                        <span style="font-size: 14px; line-height: 1.45; color: #FFF8EA;">{{ e.title }}</span>
+                      </div>
+                    </sc-for>
+                  </div>
+                </div>
+              </sc-if>
+            </div>
+          </sc-for>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="belepo" style="padding: clamp(44px, 7vw, 92px) clamp(18px, 4vw, 34px);">
+    <div style="max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(290px, 1fr)); gap: clamp(20px, 3vw, 30px);">
+      <div style="animation: fpReveal .8s both; animation-delay: 0ms; padding: clamp(24px, 3.4vw, 38px); border-radius: 18px; background: #FFF8EA; color: #4E0F26;">
+        <div style="font-size: 11.5px; font-weight: 700; letter-spacing: 2.4px; text-transform: uppercase; color: #B8863A;">Minden vetítés és program</div>
+        <div style="margin: 10px 0 12px; font-size: clamp(34px, 5.5vw, 56px); font-weight: 700; letter-spacing: -2px; line-height: 1;">0 Ft</div>
+        <p style="margin: 0; font-size: 14.5px; line-height: 1.6; color: #6E4553;">A belépés mindhárom estén, minden helyszínen ingyenes. A helyfoglalás érkezési sorrendben történik, hozz plédet vagy összecsukható széket.</p>
+      </div>
+      <div style="animation: fpReveal .8s both; animation-delay: 110ms; padding: clamp(24px, 3.4vw, 38px); border-radius: 18px; background: rgba(240,212,138,0.12); border: 1px dashed rgba(240,212,138,0.55);">
+        <div style="font-size: 11.5px; font-weight: 700; letter-spacing: 2.4px; text-transform: uppercase; color: #F0D48A;">Közönségtalálkozók · Dobó tér</div>
+        <div style="margin: 10px 0 12px; font-size: clamp(26px, 3.6vw, 36px); font-weight: 700; letter-spacing: -1px; line-height: 1.1; color: #FFF8EA;">Herendi Gábor és Törőcsik Franciska</div>
+        <p style="margin: 0 0 18px; font-size: 14.5px; line-height: 1.6; color: #DBB6C1;">Csütörtökön Herendi Gábor a Kincsem előtt, pénteken Törőcsik Franciska a Hogyan tudnék élni nélküled előtt. A terem véges: érdemes időben jönni.</p>
+        <a href="https://www.uraniaeger.hu" style="display: inline-block; padding: 14px 24px; border-radius: 6px; background: #F0D48A; color: #2E0A1B; font-size: 12px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase;">Részletek</a>
+      </div>
+      <div style="animation: fpReveal .8s both; animation-delay: 220ms; padding: clamp(24px, 3.4vw, 38px); border-radius: 18px; background: linear-gradient(150deg, #8E1A56, #5A1230);">
+        <div style="font-size: 11.5px; font-weight: 700; letter-spacing: 2.4px; text-transform: uppercase; color: #F0D48A;">Nyereményjáték</div>
+        <div style="margin: 10px 0 12px; font-size: clamp(24px, 3.4vw, 34px); font-weight: 700; letter-spacing: -1px; line-height: 1.1; color: #FFF8EA;">3 páros belépő az Agria Moziba</div>
+        <p style="margin: 0 0 18px; font-size: 14.5px; line-height: 1.6; color: #F3D3DE;">Kommenteld be, melyik filmet nézed meg a piknik alatt, és három nyertest hirdetünk a fesztivál után.</p>
+        <a href="https://www.facebook.com/egermozi" style="display: inline-block; padding: 14px 24px; border-radius: 6px; border: 1px solid rgba(255,248,234,0.6); color: #FFF8EA; font-size: 12px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase;" style-hover="background: rgba(255,248,234,0.14);">Játszom</a>
+      </div>
+    </div>
+    <p style="max-width: 1200px; margin: clamp(22px, 3vw, 32px) auto 0; font-size: 13.5px; line-height: 1.6; color: #C98FA3;">Büfé széles kínálattal minden helyszínen. Rossz idő esetén az Uránia Mozi az esőhelyszín. A műsorváltoztatás jogát fenntartjuk.</p>
+  </section>
+
+  <section id="hirlevel" style="padding: clamp(44px, 7vw, 92px) clamp(18px, 4vw, 34px); background: linear-gradient(180deg, #2E0A1B, #430F26);">
+    <div style="animation: fpReveal .8s both; animation-delay: 0ms; max-width: 780px; margin: 0 auto; text-align: center;">
+      <p style="margin: 0 0 10px; font-size: 11.5px; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; color: #F0D48A;">Emlékeztető</p>
+      <h2 style="margin: 0 0 14px; font-size: clamp(26px, 4.6vw, 46px); font-weight: 700; letter-spacing: -1px; line-height: 1.06;">Szólunk, amikor kezdődik</h2>
+      <p style="margin: 0 0 clamp(22px, 3vw, 30px); font-size: clamp(14.5px, 1.9vw, 17px); line-height: 1.6; color: #DBB6C1;">Egy levél a programról, egy a kezdés előtt. Semmi más.</p>
+      <form onSubmit="{{ subscribe }}" style="display: flex; flex-wrap: wrap; gap: 10px; justify-content: center;">
+        <input type="email" required="{{ true }}" placeholder="te@email.hu" aria-label="E-mail cím" value="{{ email }}" onChange="{{ setEmail }}" style="flex: 1 1 260px; max-width: 380px; padding: 16px 18px; border-radius: 6px; border: 1px solid rgba(240,212,138,0.4); background: rgba(255,243,224,0.06); color: #FFF8EA; font-family: 'Space Grotesk', sans-serif; font-size: 15px;" />
+        <button type="submit" disabled="{{ sending }}" style="padding: 16px 28px; border-radius: 6px; border: 0; cursor: pointer; background: #F0D48A; color: #2E0A1B; font-family: 'Space Grotesk', sans-serif; font-size: 12.5px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase;" style-hover="background: #FFF8EA;">{{ submitLabel }}</button>
+      </form>
+      <p role="status" style="margin: 16px 0 0; min-height: 20px; font-size: 13.5px; color: #F0D48A;">{{ formMsg }}</p>
+    </div>
+  </section>
+
+  <footer style="padding: clamp(32px, 5vw, 58px) clamp(18px, 4vw, 34px); border-top: 1px solid rgba(255,243,224,0.16);">
+    <div style="max-width: 1200px; margin: 0 auto; display: flex; flex-wrap: wrap; gap: 20px; justify-content: space-between; align-items: flex-end;">
+      <div>
+        <div style="font-family: 'Kaushan Script', cursive; font-size: clamp(22px, 3vw, 30px); color: #FFF8EA;">Belvárosi Filmpiknik</div>
+        <p style="margin: 8px 0 0; font-size: 13px; line-height: 1.6; color: #C98FA3;">Uránia Mozi és Rendezvényközpont · Eger<br />uraniaeger.hu · facebook.com/egermozi</p>
+      </div>
+      <div style="font-size: 12px; font-weight: 700; letter-spacing: 2.6px; text-transform: uppercase; color: #F0D48A;">Eger · A te történeted</div>
+    </div>
+  </footer>
+
+  <sc-if value="{{ storyOpen }}" hint-placeholder-val="{{ false }}">
+    <div onClick="{{ closeStory }}" style="position: fixed; inset: 0; z-index: 90; background: rgba(20,4,12,0.86); backdrop-filter: blur(6px); display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 18px; padding: 20px; overflow-y: auto;">
+      <div onClick="{{ stopClick }}" style="position: relative; flex: 0 0 auto; height: min(66vh, 600px); max-height: 600px; width: auto; aspect-ratio: 9 / 16; max-width: 88vw; container-type: size; border-radius: 20px; overflow: hidden; background: linear-gradient(180deg, #6B1030 0%, #4A0C22 55%, #2E0A1B 100%); border: 1px solid rgba(240,212,138,0.4); box-shadow: 0 30px 80px rgba(0,0,0,0.6);">
+        <div style="position: absolute; left: 0; right: 0; bottom: 0; height: 42%; background-image: url('assets/townscape.png'); background-size: cover; background-position: center bottom; opacity: 0.4; mix-blend-mode: screen;"></div>
+        <div style="position: absolute; inset: 0; padding: 8% 8% 9%; display: flex; flex-direction: column; justify-content: space-between;">
+          <div>
+            <div style="font-family: 'Kaushan Script', cursive; font-size: 7cqh; line-height: 1; color: #FFF8EA;">Filmpiknik</div>
+            <div style="margin-top: 1.6cqh; font-size: max(11px, 2.1cqh); font-weight: 700; letter-spacing: 0.28cqh; text-transform: uppercase; color: #F0D48A;">Eger · 2026. szept. 17–19.</div>
+          </div>
+          <div>
+            <div style="font-size: max(11px, 2.1cqh); font-weight: 700; letter-spacing: 0.26cqh; text-transform: uppercase; color: #F0D48A;">{{ storyWhen }}</div>
+            <div style="margin-top: 1.4cqh; font-size: max(24px, 4.6cqh); font-weight: 700; line-height: 1.08; letter-spacing: -0.06cqh; color: #FFF8EA; text-wrap: pretty;">{{ storyTitle }}</div>
+            <div style="margin-top: 1.6cqh; font-size: max(13px, 2.4cqh); line-height: 1.45; color: #E9B0C0;">{{ storyVenue }}</div>
+          </div>
+          <div style="display: flex; align-items: center; gap: 1.6cqh; flex-wrap: wrap;">
+            <span style="padding: 1.1cqh 2.2cqh; border-radius: 999px; background: #F0D48A; color: #2E0A1B; font-size: max(11px, 2cqh); font-weight: 700; letter-spacing: 0.24cqh; text-transform: uppercase;">Ingyenes</span>
+            <span style="font-size: max(11px, 2cqh); font-weight: 700; letter-spacing: 0.24cqh; text-transform: uppercase; color: #DBB6C1;">uraniaeger.hu</span>
+          </div>
+        </div>
+      </div>
+      <div onClick="{{ stopClick }}" style="display: flex; flex-wrap: wrap; gap: 10px; justify-content: center;">
+        <button type="button" onClick="{{ shareStory }}" style="padding: 14px 24px; border-radius: 999px; border: 0; cursor: pointer; background: #F0D48A; color: #2E0A1B; font-family: 'Space Grotesk', sans-serif; font-size: 11.5px; font-weight: 700; letter-spacing: 1.8px; text-transform: uppercase;">{{ shareLabel }}</button>
+        <button type="button" onClick="{{ closeStory }}" style="padding: 14px 24px; border-radius: 999px; cursor: pointer; background: transparent; border: 1px solid rgba(255,243,224,0.4); color: #FFF3E0; font-family: 'Space Grotesk', sans-serif; font-size: 11.5px; font-weight: 700; letter-spacing: 1.8px; text-transform: uppercase;">Bezár</button>
+      </div>
+      <p style="margin: 0; max-width: 340px; text-align: center; font-size: 12px; line-height: 1.6; color: #C98FA3;">Story-méretű kártya: mentsd képernyőfotóval, vagy oszd meg a linket.</p>
+    </div>
+  </sc-if>
+</div>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:1280,&quot;height&quot;:900}}">
+class Component extends DCLogic {
+  /* ── Two switches the organisers flip, no other code change needed ──────────
+     rainAlert: set to a sentence on a rainy day, the gold banner appears.
+     newsletterEndpoint: a POST url (Mailchimp, Buttondown, Formspree…). Empty
+     means the form only acknowledges locally — wire it before going live. */
+  rainAlert = null;
+  newsletterEndpoint = "";
+
+  state = {
+    day: 0, now: Date.now(), email: "", formMsg: "", sending: false,
+    stripScrollable: false, hoverVenue: null, pinVenue: null,
+    venueFilter: "Mind", tagFilter: "Mind", story: null, calMenu: null
+  };
+
+  strip = React.createRef();
+
+  measureStrip = () => {
+    const el = this.strip.current;
+    if (!el) return;
+    const scrollable = el.scrollWidth - el.clientWidth > 4;
+    if (scrollable !== this.state.stripScrollable) this.setState({ stripScrollable: scrollable });
+  };
+
+  componentDidMount() {
+    this.timer = setInterval(() => this.setState({ now: Date.now() }), 1000);
+    this.measureStrip();
+    if (typeof ResizeObserver !== "undefined") {
+      this.ro = new ResizeObserver(this.measureStrip);
+      if (this.strip.current) this.ro.observe(this.strip.current);
+    }
+    window.addEventListener("resize", this.measureStrip);
+    this.onKey = (e) => { if (e.key === "Escape") this.setState({ story: null, calMenu: null }); };
+    window.addEventListener("keydown", this.onKey);
+    /* One open calendar menu at a time, and a click anywhere else closes it. */
+    this.onDocClick = (e) => {
+      if (this.state.calMenu && !e.target.closest("article")) this.setState({ calMenu: null });
+    };
+    document.addEventListener("click", this.onDocClick);
+  }
+  componentDidUpdate() { this.measureStrip(); }
+  componentWillUnmount() {
+    clearInterval(this.timer);
+    if (this.ro) this.ro.disconnect();
+    window.removeEventListener("resize", this.measureStrip);
+    window.removeEventListener("keydown", this.onKey);
+    document.removeEventListener("click", this.onDocClick);
+  }
+
+  /* Programme. `min` is the running time, `rating` the Hungarian age limit,
+     `lang` how it is shown, `tags` drive the Jelleg filter. */
+  days() {
+    return [
+      { label: "Szept. 17. csütörtök", short: "Csütörtök", date: [2026, 8, 17], films: [
+        { time: "18.00", title: "Magyar Balázs", venue: "Dobó tér", min: 45, tags: ["Élő"],
+          sub: "Akusztikus szett a nyitóest előtt, a téren felállított színpadon." },
+        { time: "19.00", title: "Herendi és vendége", venue: "Dobó tér", min: 45, tags: ["Élő"],
+          sub: "Közönségtalálkozó Herendi Gáborral a Kincsem vetítése előtt: kérdezni lehet." },
+        { time: "19.45", title: "Kincsem", venue: "Dobó tér", min: 121, rating: 12, lang: "Magyar film", tags: [],
+          sub: "Herendi Gábor kalandos kosztümös filmje a legendás magyar versenylóról és a szerencse természetéről." },
+        { time: "21.45", title: "Michael", venue: "Dobó tér", min: 140, rating: 12, lang: "Magyar szinkron", tags: ["Késő esti"],
+          sub: "Nagyszabású zenés életrajzi film, DCI minőségű vetítéssel a fesztivál legnagyobb vásznán." } ] },
+      { label: "Szept. 18. péntek", short: "Péntek", date: [2026, 8, 18], films: [
+        { time: "18.00", title: "Aleva Zsófi", venue: "Dobó tér", min: 45, tags: ["Élő"],
+          sub: "Akusztikus szett a péntek esti vetítések előtt." },
+        { time: "19.00", title: "Közönségtalálkozó: Törőcsik Franciska", venue: "Dobó tér", min: 45, tags: ["Élő"],
+          sub: "Beszélgetés a Hogyan tudnék élni nélküled főszereplőjével, közvetlenül a vetítés előtt." },
+        { time: "19.45", title: "Hogyan tudnék élni nélküled", venue: "Dobó tér", min: 105, rating: 12, lang: "Magyar film", tags: [],
+          sub: "Magyar romantikus vígjáték szerelemről és önismeretről, Törőcsik Franciskával a főszerepben." },
+        { time: "19.45", title: "Zootropolis 2.", venue: "Kertmozi", min: 108, rating: 6, lang: "Magyar szinkron", tags: ["Családi"],
+          sub: "Judy és Nick új nyomozása az állatvárosban — a legkisebbeknek is, a csillagos ég alatt." },
+        { time: "20.00", title: "Az ördög Pradát visel 2.", venue: "Agria Park udvar", min: 115, rating: 12, lang: "Magyar szinkron", tags: [],
+          sub: "Visszatér a divatvilág legfélelmetesebb főszerkesztője; szatíra hatalomról és stílusról." },
+        { time: "21.45", title: "Pókember – Brand New Day", venue: "Dobó tér", min: 150, rating: 12, lang: "Magyar szinkron", tags: ["Késő esti"],
+          sub: "Peter Parker új fejezete: nagy tempó, nagy látvány, késő esti vetítés a főtéren." } ] },
+      { label: "Szept. 19. szombat", short: "Szombat", date: [2026, 8, 19], films: [
+        { time: "19.00", title: "Lajtha Néptánc bemutató", venue: "Dobó tér", min: 40, tags: ["Élő", "Családi"],
+          sub: "A Lajtha együttes műsora nyitja a záróestét, élő zenével." },
+        { time: "19.00", title: "Backrooms – Hátsó szobák", venue: "Agria Park udvar", min: 100, rating: 16, lang: "Magyar szinkron", tags: [],
+          sub: "Internetes rémlegendából született horror a végtelen, sárga szobák világáról. Erős idegzetűeknek." },
+        { time: "19.45", title: "Magyar menyegző", venue: "Dobó tér", min: 93, rating: 12, lang: "Magyar film", tags: [],
+          sub: "Magyar vígjáték egy elszabaduló lakodalomról, ahol minden család a maga módján bolond." },
+        { time: "19.45", title: "Jurassic World: Újjászületés", venue: "Kertmozi", min: 133, rating: 12, lang: "Magyar szinkron", tags: ["Családi"],
+          sub: "Dinoszauruszok a szabad ég alatt: a franchise új fejezete a Kertmozi vásznán." },
+        { time: "21.00", title: "Öt éjjel Freddy pizzázójában 2.", venue: "Agria Park udvar", min: 110, rating: 16, lang: "Magyar szinkron", tags: ["Késő esti"],
+          sub: "Az animatronikus szörnyek visszatérnek — a videójáték-horror folytatása, késő esti sávban." },
+        { time: "21.30", title: "Itt érzem magam otthon", venue: "Dobó tér", min: 124, rating: 12, lang: "Magyar film", tags: ["Késő esti"],
+          sub: "A fesztivál záró vetítése: magyar film a hazatalálásról, a főtéren, éjszakai hangulatban." } ] }
+    ];
+  }
+
+  venueMeta() {
+    return [
+      { name: "Dobó tér", when: "Mindhárom este 18.00-tól", address: "Dobó István tér, Eger",
+        desc: "A fesztivál szíve: akusztikus fellépők, közönségtalálkozók, majd a nagy vetítések.",
+        icon: "M4 20h16M6 20V9l6-4 6 4v11M10 20v-6h4v6",
+        mapsLink: "https://www.google.com/maps/search/?api=1&query=Dob%C3%B3%20Istv%C3%A1n%20t%C3%A9r%2C%20Eger" },
+      { name: "Kertmozi", when: "Péntek és szombat 19.45",
+        address: "Egészségház utca, Eger · a régi Kertmozi a Bródy Sándor könyvtár mögötti udvarban",
+        desc: "Vetítés a szabad ég alatt: családi filmek a nyár utolsó estéin.",
+        icon: "M3 4h18v11H3zM8 20l4-4 4 4M12 15v1",
+        mapsLink: "https://www.google.com/maps/search/?api=1&query=47.90048%2C20.37919" },
+      { name: "Agria Park udvar", when: "Péntek 20.00 · szombat 19.00 és 21.00", address: "Törvényház utca 4, Eger",
+        desc: "Esti és késő esti vetítések a park udvarán.",
+        icon: "M4 21V11a8 8 0 0116 0v10M3 21h18M9.5 21v-6a2.5 2.5 0 015 0v6",
+        mapsLink: "https://www.google.com/maps/search/?api=1&query=Agria%20Park%2C%20T%C3%B6rv%C3%A9nyh%C3%A1z%20utca%204%2C%20Eger" }
+    ];
+  }
+
+  /* ── Calendar ───────────────────────────────────────────────────────────── */
+  icsStamp(dateArr, time, addMinutes) {
+    const [h, mi] = time.split(".").map(Number);
+    const d = new Date(dateArr[0], dateArr[1], dateArr[2], h, mi, 0);
+    if (addMinutes) d.setMinutes(d.getMinutes() + addMinutes);
+    const p = (n) => String(n).padStart(2, "0");
+    return d.getFullYear() + p(d.getMonth() + 1) + p(d.getDate()) + "T" + p(d.getHours()) + p(d.getMinutes()) + "00";
+  }
+
+  /* Local (floating) times with an explicit TZID: what every calendar app expects
+     for a fixed-location event. */
+  buildIcs(entries) {
+    const lines = ["BEGIN:VCALENDAR", "VERSION:2.0", "PRODID:-//Belvarosi Filmpiknik//Eger//HU", "CALSCALE:GREGORIAN", "METHOD:PUBLISH"];
+    const esc = (s) => String(s).replace(/\\/g, "\\\\").replace(/;/g, "\\;").replace(/,/g, "\\,").replace(/\n/g, "\\n");
+    entries.forEach((e, i) => {
+      lines.push(
+        "BEGIN:VEVENT",
+        "UID:filmpiknik-2026-" + i + "-" + e.start + "@uraniaeger.hu",
+        "DTSTAMP:" + this.icsStamp([2026, 7, 1], "12.00", 0) + "Z",
+        "DTSTART;TZID=Europe/Budapest:" + e.start,
+        "DTEND;TZID=Europe/Budapest:" + e.end,
+        "SUMMARY:" + esc(e.title),
+        "LOCATION:" + esc(e.location),
+        "DESCRIPTION:" + esc(e.desc),
+        "END:VEVENT"
+      );
+    });
+    lines.push("END:VCALENDAR");
+    return lines.join("\r\n");
+  }
+
+  download(filename, text) {
+    const blob = new Blob([text], { type: "text/calendar;charset=utf-8" });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement("a");
+    a.href = url;
+    a.download = filename;
+    document.body.appendChild(a);
+    a.click();
+    a.remove();
+    setTimeout(() => URL.revokeObjectURL(url), 4000);
+  }
+
+  slug(s) {
+    return s.toLowerCase()
+      .replace(/[áä]/g, "a").replace(/[éë]/g, "e").replace(/[íï]/g, "i")
+      .replace(/[óöő]/g, "o").replace(/[úüű]/g, "u")
+      .replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
+  }
+
+  /* Google and Outlook take the event in the query string, so no download and no
+     import step — the only reason the .ics stays is Apple Calendar and Thunderbird,
+     plus the whole-festival file, which no web calendar can express as a link. */
+  googleUrl(day, f) {
+    const start = this.icsStamp(day.date, f.time, 0);
+    const end = this.icsStamp(day.date, f.time, f.min || 90);
+    const q = (s) => encodeURIComponent(s);
+    return "https://calendar.google.com/calendar/render?action=TEMPLATE"
+      + "&text=" + q(f.title + " · Belvárosi Filmpiknik")
+      + "&dates=" + start + "/" + end
+      + "&ctz=Europe/Budapest"
+      + "&location=" + q(f.venue + ", Eger")
+      + "&details=" + q(f.sub + "\n\nIngyenes program. https://uraniaeger.hu");
+  }
+
+  outlookUrl(day, f) {
+    const iso = (addMin) => {
+      const [h, mi] = f.time.split(".").map(Number);
+      const d = new Date(day.date[0], day.date[1], day.date[2], h, mi, 0);
+      if (addMin) d.setMinutes(d.getMinutes() + addMin);
+      const p = (n) => String(n).padStart(2, "0");
+      /* +02:00 — Hungary is on CEST in mid-September. */
+      return d.getFullYear() + "-" + p(d.getMonth() + 1) + "-" + p(d.getDate())
+        + "T" + p(d.getHours()) + ":" + p(d.getMinutes()) + ":00+02:00";
+    };
+    const q = (s) => encodeURIComponent(s);
+    return "https://outlook.live.com/calendar/0/action/compose?rru=addevent"
+      + "&subject=" + q(f.title + " · Belvárosi Filmpiknik")
+      + "&startdt=" + q(iso(0)) + "&enddt=" + q(iso(f.min || 90))
+      + "&location=" + q(f.venue + ", Eger")
+      + "&body=" + q(f.sub + " Ingyenes program.");
+  }
+
+  entryFor(day, f) {
+    return {
+      start: this.icsStamp(day.date, f.time, 0),
+      end: this.icsStamp(day.date, f.time, f.min || 90),
+      title: f.title + " · Belvárosi Filmpiknik",
+      location: f.venue + ", Eger",
+      desc: f.sub + " Ingyenes program. uraniaeger.hu"
+    };
+  }
+
+  renderVals() {
+    const days = this.days();
+    const active = this.state.day;
+    const day = days[active];
+    const target = new Date(2026, 8, 17, 18, 0, 0).getTime();
+    const left = Math.max(0, target - this.state.now);
+    const dd = Math.floor(left / 86400000), hh = Math.floor(left / 3600000) % 24;
+    const mm = Math.floor(left / 60000) % 60, ss = Math.floor(left / 1000) % 60;
+    const pad = (n) => String(n).padStart(2, "0");
+
+    const pill = (on) => "padding: 11px 18px; border-radius: 999px; cursor: pointer; font-family: 'Space Grotesk', sans-serif; font-size: 11.5px; font-weight: 700; letter-spacing: 1.6px; text-transform: uppercase; transition: all .18s ease; " +
+      (on ? "background: #F0D48A; color: #2E0A1B; border: 1px solid #F0D48A;" : "background: transparent; color: #DBB6C1; border: 1px solid rgba(240,212,138,0.3);");
+    const chip = (on) => "padding: 9px 15px; border-radius: 999px; cursor: pointer; font-family: 'Space Grotesk', sans-serif; font-size: 11px; font-weight: 700; letter-spacing: 1.4px; text-transform: uppercase; transition: all .18s ease; " +
+      (on ? "background: rgba(240,212,138,0.9); color: #2E0A1B; border: 1px solid #F0D48A;" : "background: transparent; color: #C98FA3; border: 1px solid rgba(240,212,138,0.24);");
+
+    const vf = this.state.venueFilter, tf = this.state.tagFilter;
+    const matches = (f) => (vf === "Mind" || f.venue === vf) && (tf === "Mind" || (f.tags || []).indexOf(tf) > -1);
+    const shown = day.films.filter(matches);
+
+    const eventsAt = (name) => {
+      const rows = [];
+      days.forEach((d2) => d2.films.forEach((f) => {
+        if (f.venue === name) rows.push({ when: d2.short + " · " + f.time, title: f.title });
+      }));
+      return rows;
+    };
+    const openVenue = this.state.pinVenue !== null ? this.state.pinVenue : this.state.hoverVenue;
+    const story = this.state.story;
+
+    return {
+      rainAlert: this.rainAlert,
+      countdown: [ { v: dd, l: "nap" }, { v: pad(hh), l: "óra" }, { v: pad(mm), l: "perc" }, { v: pad(ss), l: "mp" } ],
+
+      dayTabs: days.map((d2, i) => ({ label: d2.short, style: pill(i === active), select: () => this.setState({ day: i }) })),
+      venueChips: ["Mind", "Dobó tér", "Kertmozi", "Agria Park udvar"].map((name) => ({
+        label: name, style: chip(vf === name), select: () => this.setState({ venueFilter: name })
+      })),
+      tagChips: ["Mind", "Családi", "Késő esti", "Élő"].map((name) => ({
+        label: name === "Élő" ? "Élő program" : name, style: chip(tf === name), select: () => this.setState({ tagFilter: name })
+      })),
+      clearFilters: () => this.setState({ venueFilter: "Mind", tagFilter: "Mind" }),
+      noMatches: shown.length === 0,
+
+      films: shown.map((f) => ({
+        day: day.short, time: f.time, title: f.title, sub: f.sub, venue: f.venue,
+        badges: [
+          f.rating ? { label: f.rating + " éves kortól" } : null,
+          f.lang ? { label: f.lang } : null,
+          f.min ? { label: f.min + " perc" } : null
+        ].filter(Boolean),
+        calOpen: this.state.calMenu === day.short + f.time + f.title,
+        toggleCal: () => this.setState((s) => ({ calMenu: s.calMenu === day.short + f.time + f.title ? null : day.short + f.time + f.title })),
+        closeCal: () => this.setState({ calMenu: null }),
+        googleUrl: this.googleUrl(day, f),
+        outlookUrl: this.outlookUrl(day, f),
+        addToCalendar: () => {
+          this.download("filmpiknik-" + this.slug(f.title) + ".ics", this.buildIcs([this.entryFor(day, f)]));
+          this.setState({ calMenu: null });
+        },
+        openStory: () => this.setState({ story: { title: f.title, when: day.label + " · " + f.time, venue: f.venue + " · ingyenes" } })
+      })),
+      addWholeFestival: () => {
+        const all = [];
+        days.forEach((d2) => d2.films.forEach((f) => all.push(this.entryFor(d2, f))));
+        this.download("belvarosi-filmpiknik-2026.ics", this.buildIcs(all));
+      },
+
+      venues: this.venueMeta().map((v, i) => Object.assign({
+        no: i + 1,
+        events: eventsAt(v.name),
+        open: openVenue === i,
+        z: openVenue === i ? 40 : 1,
+        hint: openVenue === i ? "Kattints a bezáráshoz" : "Mutasd a műsort",
+        enter: () => this.setState({ hoverVenue: i }),
+        leave: () => this.setState((s) => ({ hoverVenue: s.hoverVenue === i ? null : s.hoverVenue })),
+        toggle: () => this.setState((s) => ({ pinVenue: s.pinVenue === i ? null : i })),
+        keyDown: (e) => {
+          if (e.key === "Enter" || e.key === " ") {
+            e.preventDefault();
+            this.setState((s) => ({ pinVenue: s.pinVenue === i ? null : i }));
+          }
+        }
+      }, v)),
+
+      storyOpen: !!story,
+      storyTitle: story ? story.title : "",
+      storyWhen: story ? story.when : "",
+      storyVenue: story ? story.venue : "",
+      shareLabel: this.state.formMsg === "__copied" ? "Link kimásolva" : "Megosztás",
+      closeStory: () => this.setState({ story: null }),
+      stopClick: (e) => e.stopPropagation(),
+      shareStory: () => {
+        if (!story) return;
+        const text = story.title + " — Belvárosi Filmpiknik, " + story.when + ", " + story.venue;
+        const url = typeof location !== "undefined" ? location.href : "";
+        if (navigator.share) {
+          navigator.share({ title: "Belvárosi Filmpiknik", text: text, url: url }).catch(() => {});
+        } else if (navigator.clipboard) {
+          navigator.clipboard.writeText(text + " " + url).then(() => {
+            this.setState({ formMsg: "__copied" });
+            setTimeout(() => this.setState({ formMsg: "" }), 2500);
+          }).catch(() => {});
+        }
+      },
+
+      stripRef: this.strip,
+      stripScrollable: this.state.stripScrollable,
+      email: this.state.email,
+      sending: this.state.sending,
+      submitLabel: this.state.sending ? "Küldés…" : "Feliratkozom",
+      formMsg: this.state.formMsg === "__copied" ? "" : this.state.formMsg,
+      setEmail: (e) => this.setState({ email: e.target.value }),
+      subscribe: (e) => {
+        e.preventDefault();
+        const email = this.state.email;
+        if (!this.newsletterEndpoint) {
+          this.setState({ formMsg: "Köszönjük! Szólunk, amint közeledik a nyitóest.", email: "" });
+          return;
+        }
+        this.setState({ sending: true, formMsg: "" });
+        fetch(this.newsletterEndpoint, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ email: email })
+        }).then((r) => {
+          if (!r.ok) throw new Error("hiba");
+          this.setState({ sending: false, email: "", formMsg: "Köszönjük! Szólunk, amint közeledik a nyitóest." });
+        }).catch(() => {
+          this.setState({ sending: false, formMsg: "Most nem sikerült elküldeni. Próbáld újra, vagy írj: urania@egermozi.hu" });
+        });
+      }
+    };
+  }
+}
+
+</script>
+</body>
+</html>

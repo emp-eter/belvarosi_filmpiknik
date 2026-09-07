@@ -1,0 +1,93 @@
+.section {
+  padding: var(--section-y) 0;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+  gap: clamp(20px, 3vw, 30px);
+}
+
+.card {
+  padding: var(--card-pad);
+  border-radius: var(--radius-xl);
+}
+
+/* Az egyetlen világos felület az oldalon: pont ezért a leghangosabb. */
+.cream {
+  background: var(--surface-light);
+  color: var(--text-on-light);
+}
+.dashed {
+  background: rgba(240, 212, 138, 0.12);
+  border: 1px dashed rgba(240, 212, 138, 0.55);
+}
+.plum {
+  background: var(--grad-prize);
+}
+
+.eyebrow {
+  font-size: 11.5px;
+  font-weight: var(--weight-bold);
+  letter-spacing: 2.4px;
+  text-transform: uppercase;
+  color: var(--text-accent);
+}
+.eyebrowOnLight {
+  color: var(--gold-600);
+}
+
+.price {
+  margin: 10px 0 12px;
+  font-size: var(--size-stat);
+  font-weight: var(--weight-bold);
+  letter-spacing: -2px;
+  line-height: 1;
+}
+
+.headline {
+  margin: 10px 0 12px;
+  font-weight: var(--weight-bold);
+  letter-spacing: -1px;
+  line-height: 1.1;
+  color: var(--text-primary);
+}
+.headlineMeet {
+  font-size: clamp(26px, 3.6vw, 36px);
+}
+.headlinePrize {
+  font-size: clamp(24px, 3.4vw, 34px);
+}
+
+.text {
+  margin: 0;
+  font-size: 14.5px;
+  line-height: 1.6;
+  color: var(--text-muted);
+}
+.textSpaced {
+  margin-bottom: 18px;
+}
+.textOnLight {
+  color: var(--text-on-light-muted);
+}
+.textOnPlum {
+  color: var(--rose-200);
+  margin-bottom: 18px;
+}
+
+/* A szilva kártya ghost gombja krém-alapú, kicsit erősebb körvonallal. */
+.plumButton {
+  border-color: rgba(255, 248, 234, 0.6);
+  color: var(--text-primary);
+}
+.plumButton:hover {
+  background: rgba(255, 248, 234, 0.14);
+}
+
+.note {
+  margin: clamp(22px, 3vw, 32px) auto 0;
+  font-size: 13.5px;
+  line-height: 1.6;
+  color: var(--text-subtle);
+}

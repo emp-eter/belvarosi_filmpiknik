@@ -1,0 +1,22 @@
+:root {
+  --ease-out-soft: cubic-bezier(.2, .7, .3, 1);
+  --dur-fast: .18s;
+  --dur-base: .2s;
+  --dur-reveal: .8s;
+  --reveal-step: 110ms;
+  --lift-hover: translateY(-6px);
+}
+
+@keyframes fpReveal {
+  from { opacity: 0; transform: translateY(18px); }
+  to { opacity: 1; transform: none; }
+}
+
+@keyframes fpGlow {
+  0%, 100% { opacity: .5; }
+  50% { opacity: .85; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :root { --dur-fast: 0s; --dur-base: 0s; --dur-reveal: 0s; --reveal-step: 0ms; }
+}

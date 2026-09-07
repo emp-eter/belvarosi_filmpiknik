@@ -1,0 +1,207 @@
+{
+  "festival": {
+    "name": "Belvárosi Filmpiknik",
+    "shortName": "Filmpiknik",
+    "year": 2026,
+    "city": "Eger",
+    "dateRange": "2026. SZEPT. 17–19.",
+    "opening": "2026-09-17T18:00:00+02:00",
+    "url": "https://uraniaeger.hu",
+    "siteUrl": "https://filmpiknik.uraniaeger.hu/",
+    "organiser": "Uránia Mozi és Rendezvényközpont",
+    "facebook": "https://www.facebook.com/egermozi",
+    "rainVenue": "Uránia Mozi",
+    "copyright": "CinemaCenter",
+    "partners": [
+      {
+        "role": "Főszervező",
+        "name": "CinemaCenter",
+        "logo": "/assets/logos/cinemacenter.png",
+        "url": "https://www.cinemacenter.hu"
+      },
+      {
+        "role": "Főtámogató",
+        "name": "Nemzeti Kulturális Alap",
+        "logo": "/assets/logos/nka.png",
+        "url": "https://nka.hu",
+        "size": "lg"
+      }
+    ]
+  },
+  "days": [
+    {
+      "label": "Szept. 17. csütörtök",
+      "short": "Csütörtök",
+      "abbr": "Csüt",
+      "date": "2026-09-17",
+      "films": [
+        {
+          "time": "18.00",
+          "title": "Magyar Balázs",
+          "venue": "Dobó tér",
+          "min": 45,
+          "tags": ["Élő"],
+          "sub": "Akusztikus szett a nyitóest előtt, a téren felállított színpadon."
+        },
+        {
+          "time": "19.00",
+          "title": "Herendi és vendége",
+          "venue": "Dobó tér",
+          "min": 45,
+          "tags": ["Élő"],
+          "sub": "Közönségtalálkozó Herendi Gáborral a Kincsem vetítése előtt: kérdezni lehet."
+        },
+        {
+          "time": "19.45",
+          "title": "Kincsem",
+          "venue": "Dobó tér",
+          "min": 121,
+          "rating": 12,
+          "lang": "Magyar film",
+          "tags": [],
+          "sub": "Herendi Gábor kalandos kosztümös filmje a legendás magyar versenylóról és a szerencse természetéről."
+        },
+        {
+          "time": "21.45",
+          "title": "Michael",
+          "venue": "Dobó tér",
+          "min": 140,
+          "rating": 12,
+          "lang": "Magyar szinkron",
+          "tags": ["Késő esti"],
+          "sub": "Nagyszabású zenés életrajzi film, DCI minőségű vetítéssel a fesztivál legnagyobb vásznán."
+        }
+      ]
+    },
+    {
+      "label": "Szept. 18. péntek",
+      "short": "Péntek",
+      "abbr": "Pén",
+      "date": "2026-09-18",
+      "films": [
+        {
+          "time": "18.00",
+          "title": "Aleva Zsófi",
+          "venue": "Dobó tér",
+          "min": 45,
+          "tags": ["Élő"],
+          "sub": "Akusztikus szett a péntek esti vetítések előtt."
+        },
+        {
+          "time": "19.00",
+          "title": "Közönségtalálkozó: Törőcsik Franciska",
+          "venue": "Dobó tér",
+          "min": 45,
+          "tags": ["Élő"],
+          "sub": "Beszélgetés a Hogyan tudnék élni nélküled főszereplőjével, közvetlenül a vetítés előtt."
+        },
+        {
+          "time": "19.45",
+          "title": "Hogyan tudnék élni nélküled",
+          "venue": "Dobó tér",
+          "min": 105,
+          "rating": 12,
+          "lang": "Magyar film",
+          "tags": [],
+          "sub": "Magyar romantikus vígjáték szerelemről és önismeretről, Törőcsik Franciskával a főszerepben."
+        },
+        {
+          "time": "19.45",
+          "title": "Zootropolis 2.",
+          "venue": "Kertmozi",
+          "min": 108,
+          "rating": 6,
+          "lang": "Magyar szinkron",
+          "tags": ["Családi"],
+          "sub": "Judy és Nick új nyomozása az állatvárosban — a legkisebbeknek is, a csillagos ég alatt."
+        },
+        {
+          "time": "20.00",
+          "title": "Az ördög Pradát visel 2.",
+          "venue": "Agria Park udvar",
+          "min": 115,
+          "rating": 12,
+          "lang": "Magyar szinkron",
+          "tags": [],
+          "sub": "Visszatér a divatvilág legfélelmetesebb főszerkesztője; szatíra hatalomról és stílusról."
+        },
+        {
+          "time": "21.45",
+          "title": "Pókember – Brand New Day",
+          "venue": "Dobó tér",
+          "min": 150,
+          "rating": 12,
+          "lang": "Magyar szinkron",
+          "tags": ["Késő esti"],
+          "sub": "Peter Parker új fejezete: nagy tempó, nagy látvány, késő esti vetítés a főtéren."
+        }
+      ]
+    },
+    {
+      "label": "Szept. 19. szombat",
+      "short": "Szombat",
+      "abbr": "Szo",
+      "date": "2026-09-19",
+      "films": [
+        {
+          "time": "19.00",
+          "title": "Lajtha Néptánc bemutató",
+          "venue": "Dobó tér",
+          "min": 40,
+          "tags": ["Élő", "Családi"],
+          "sub": "A Lajtha együttes műsora nyitja a záróestét, élő zenével."
+        },
+        {
+          "time": "19.00",
+          "title": "Backrooms – Hátsó szobák",
+          "venue": "Agria Park udvar",
+          "min": 100,
+          "rating": 16,
+          "lang": "Magyar szinkron",
+          "tags": [],
+          "sub": "Internetes rémlegendából született horror a végtelen, sárga szobák világáról. Erős idegzetűeknek."
+        },
+        {
+          "time": "19.45",
+          "title": "Magyar menyegző",
+          "venue": "Dobó tér",
+          "min": 93,
+          "rating": 12,
+          "lang": "Magyar film",
+          "tags": [],
+          "sub": "Magyar vígjáték egy elszabaduló lakodalomról, ahol minden család a maga módján bolond."
+        },
+        {
+          "time": "19.45",
+          "title": "Jurassic World: Újjászületés",
+          "venue": "Kertmozi",
+          "min": 133,
+          "rating": 12,
+          "lang": "Magyar szinkron",
+          "tags": ["Családi"],
+          "sub": "Dinoszauruszok a szabad ég alatt: a franchise új fejezete a Kertmozi vásznán."
+        },
+        {
+          "time": "21.00",
+          "title": "Öt éjjel Freddy pizzázójában 2.",
+          "venue": "Agria Park udvar",
+          "min": 110,
+          "rating": 16,
+          "lang": "Magyar szinkron",
+          "tags": ["Késő esti"],
+          "sub": "Az animatronikus szörnyek visszatérnek — a videójáték-horror folytatása, késő esti sávban."
+        },
+        {
+          "time": "21.30",
+          "title": "Itt érzem magam otthon",
+          "venue": "Dobó tér",
+          "min": 124,
+          "rating": 12,
+          "lang": "Magyar film",
+          "tags": ["Késő esti"],
+          "sub": "A fesztivál záró vetítése: magyar film a hazatalálásról, a főtéren, éjszakai hangulatban."
+        }
+      ]
+    }
+  ]
+}

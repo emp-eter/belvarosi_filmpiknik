@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Belvárosi Filmpiknik – helyszínek</title>
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha384-sHL9NAb7lN7rfvG5lfHpm643Xkcjzp4jFvuavGOndn6pjVqS6ny56CAt3nsEVT4H" crossorigin="anonymous">
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha384-cxOPjt7s7Iz04uaHJceBmS+qpjv2JkIHNVcuOrM+YHwZOmJGBXI00mdUXEq65HTH" crossorigin="anonymous"></script>
+<style>
+  html, body { margin: 0; height: 100%; background: #2E0A1B; font-family: 'Space Grotesk', Helvetica, sans-serif; }
+  #map { position: absolute; inset: 0; background: #2E0A1B; }
+  .leaflet-tile-pane { filter: grayscale(1) invert(1) brightness(.82) sepia(.55) hue-rotate(300deg) saturate(2.1) contrast(.95); }
+  .fp-pin { display: flex; align-items: center; justify-content: center; width: 34px; height: 34px; border-radius: 50%;
+    background: #F0D48A; color: #2E0A1B; font-size: 14px; font-weight: 700; box-shadow: 0 0 0 6px rgba(240,212,138,.22); }
+  .leaflet-popup-content-wrapper { background: #40101F; color: #FFF8EA; border-radius: 10px; border: 1px solid rgba(240,212,138,.4); }
+  .leaflet-popup-tip { background: #40101F; }
+  .leaflet-popup-content { margin: 12px 14px; font-size: 13.5px; line-height: 1.5; }
+  .leaflet-popup-content { width: 268px !important; }
+  .fp-name { display: block; font-size: 15px; font-weight: 700; margin-bottom: 3px; }
+  .fp-when { display: block; font-size: 11px; font-weight: 700; letter-spacing: 1.6px; text-transform: uppercase; color: #F0D48A; }
+  .fp-addr { display: block; margin-top: 4px; font-size: 12.5px; color: #C98FA3; }
+  /* The popup lives inside a clipped map box that can be as short as 320px, so the
+     list is capped against the viewport, not a fixed pixel height. */
+  .fp-prog { margin-top: 8px; max-height: min(190px, 34vh); overflow-y: auto; }
+  .fp-row { display: grid; grid-template-columns: 92px 1fr; gap: 8px; align-items: baseline; padding: 6px 0; border-top: 1px solid rgba(240,212,138,.16); }
+  .fp-time { font-size: 10px; font-weight: 700; letter-spacing: 1.4px; text-transform: uppercase; color: #E9B0C0; font-variant-numeric: tabular-nums; }
+  .fp-title { font-size: 13px; line-height: 1.4; color: #FFF8EA; }
+  /* Above the scrolling list: the actionable control must never be the clipped one. */
+  .fp-link { display: inline-block; margin-top: 8px; font-size: 10.5px; font-weight: 700; letter-spacing: 1.6px; text-transform: uppercase; color: #F0D48A !important; }
+  .leaflet-control-attribution { background: rgba(46,10,27,.72) !important; color: #C98FA3 !important; font-size: 10px !important; }
+  .leaflet-control-attribution a { color: #F0D48A !important; }
+  .leaflet-bar a { background: #40101F !important; color: #FFF8EA !important; border-color: rgba(240,212,138,.3) !important; }
+  .leaflet-bar a:hover { background: #5A1230 !important; }
+</style>
+</head>
+<body>
+<div id="map"></div>
+<script>
+  /* Programme kept in the same shape as the promo page's days() data, so the two
+     popups tell the same story. */
+  var venues = [
+    { no: 1, name: "Dobó tér", when: "Mindhárom este 18.00-tól",
+      addr: "Dobó István tér, Eger", ll: [47.90239, 20.37686],
+      maps: "https://www.google.com/maps/search/?api=1&query=Dob%C3%B3%20Istv%C3%A1n%20t%C3%A9r%2C%20Eger",
+      events: [
+        ["Csüt · 18.00", "Magyar Balázs – akusztikus"],
+        ["Csüt · 19.00", "Közönségtalálkozó: Herendi Gábor"],
+        ["Csüt · 19.45", "Kincsem (121')"],
+        ["Csüt · 21.45", "Michael"],
+        ["Pén · 18.00", "Aleva Zsófi – akusztikus"],
+        ["Pén · 19.00", "Közönségtalálkozó: Törőcsik Franciska"],
+        ["Pén · 19.45", "Hogyan tudnék élni nélküled (105')"],
+        ["Pén · 21.45", "Pókember – Brand New Day (150')"],
+        ["Szo · 19.00", "Lajtha Néptánc bemutató"],
+        ["Szo · 19.45", "Magyar menyegző (93')"],
+        ["Szo · 21.30", "Itt érzem magam otthon (124')"]
+      ] },
+    { no: 2, name: "Kertmozi", when: "Péntek és szombat 19.45",
+      /* Pinned by hand, not geocoded: the cinema is the inner courtyard of the block
+         framed by the Bródy Sándor library, Egererdő Zrt. and Egészségház u. 29/31/3,
+         so a street-level geocode would land on the wrong side of a building. */
+      addr: "Egészségház utca, Eger · a régi Kertmozi, a Bródy Sándor könyvtár mögötti udvarban", ll: [47.90048, 20.37919],
+      maps: "https://www.google.com/maps/search/?api=1&query=47.90048%2C20.37919",
+      events: [
+        ["Pén · 19.45", "Zootropolis 2."],
+        ["Szo · 19.45", "Jurassic World: Újjászületés"]
+      ] },
+    { no: 3, name: "Agria Park udvar", when: "Péntek 20.00 · szombat 19.00 és 21.00",
+      addr: "Törvényház utca 4, Eger", ll: [47.90022, 20.36862],
+      maps: "https://www.google.com/maps/search/?api=1&query=Agria%20Park%2C%20T%C3%B6rv%C3%A9nyh%C3%A1z%20utca%204%2C%20Eger",
+      events: [
+        ["Pén · 20.00", "Az ördög Pradát visel 2."],
+        ["Szo · 19.00", "Backrooms – Hátsó szobák"],
+        ["Szo · 21.00", "Öt éjjel Freddy pizzázójában 2."]
+      ] }
+  ];
+  var map = L.map('map', { scrollWheelZoom: false, zoomControl: true });
+  L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    attribution: '© OpenStreetMap contributors', maxZoom: 19
+  }).addTo(map);
+  var group = [];
+  venues.forEach(function (v) {
+    var m = L.marker(v.ll, {
+      icon: L.divIcon({ className: '', html: '<div class="fp-pin">' + v.no + '</div>', iconSize: [34, 34], iconAnchor: [17, 17] }),
+      title: v.name
+    }).addTo(map);
+    var rows = v.events.map(function (e) {
+      return '<div class="fp-row"><span class="fp-time">' + e[0] + '</span><span class="fp-title">' + e[1] + '</span></div>';
+    }).join('');
+    m.bindPopup(
+      '<span class="fp-name">' + v.no + '. ' + v.name + '</span>' +
+      '<span class="fp-when">' + v.when + '</span>' +
+      '<span class="fp-addr">' + v.addr + '</span>' +
+      '<a class="fp-link" href="' + v.maps + '" target="_blank" rel="noopener">Útvonal →</a>' +
+      '<div class="fp-prog">' + rows + '</div>',
+      { maxWidth: 300, autoPanPadding: [16, 16] }
+    );
+    m.on('mouseover', function () { m.openPopup(); });
+    group.push(m);
+  });
+  map.fitBounds(L.featureGroup(group).getBounds(), { padding: [56, 56] });
+
+  map.on('click', function () { map.scrollWheelZoom.enable(); });
+  map.on('mouseout', function () { map.scrollWheelZoom.disable(); });
+</script>
+</body>
+</html>

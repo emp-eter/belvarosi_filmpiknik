@@ -1,0 +1,69 @@
+:root {
+  /* Wine ramp: the brand's ground. Everything dark is one of these. */
+  --wine-900: #2E0A1B;
+  --wine-800: #3A0D22;
+  --wine-750: #40101F;
+  --wine-700: #430F26;
+  --wine-600: #4E0F26;
+  --wine-500: #5A1230;
+  --wine-400: #6B1030;
+  --wine-300: #7A1B3D;
+  --plum-500: #8E1A56;
+
+  /* Gold ramp: the single accent. Used for emphasis, never for large fills. */
+  --gold-300: #F0D48A;
+  --gold-400: #E9C46A;
+  --gold-500: #DFA845;
+  --gold-600: #B8863A;
+
+  /* Cream ramp: light surfaces and text on dark. */
+  --cream-100: #FFF8EA;
+  --cream-200: #FFF3E0;
+  --cream-300: #FAF0DA;
+  --cream-400: #F1DFC0;
+
+  /* Rose ramp: muted secondary text, derived from wine + cream. */
+  --rose-200: #F3D3DE;
+  --rose-300: #E9B0C0;
+  --rose-400: #DBB6C1;
+  --rose-500: #C98FA3;
+  --rose-700: #8A5C6B;
+  --rose-800: #6E4553;
+
+  /* Semantic aliases: prefer these in components. */
+  --surface-base: var(--wine-900);
+  --surface-raised: var(--wine-750);
+  --surface-sunken: var(--wine-800);
+  --surface-light: var(--cream-100);
+  --surface-light-alt: var(--cream-400);
+  --surface-glass: rgba(255, 243, 224, 0.07);
+  --surface-glass-strong: rgba(255, 243, 224, 0.12);
+  --surface-accent-soft: rgba(240, 212, 138, 0.12);
+
+  --text-primary: var(--cream-100);
+  --text-body: var(--cream-200);
+  --text-muted: var(--rose-400);
+  --text-subtle: var(--rose-500);
+  --text-accent: var(--gold-300);
+  --text-on-light: var(--wine-600);
+  --text-on-light-muted: var(--rose-800);
+  --text-on-accent: var(--wine-900);
+
+  --border-hairline: rgba(255, 243, 224, 0.16);
+  --border-accent: rgba(240, 212, 138, 0.28);
+  --border-accent-strong: rgba(240, 212, 138, 0.55);
+  --border-on-light: rgba(122, 27, 61, 0.14);
+
+  --accent: var(--gold-300);
+  --accent-hover: var(--cream-100);
+  --accent-ink: var(--wine-900);
+
+  /* Signature gradients. */
+  --grad-night: linear-gradient(180deg, #6B1030 0%, #4A0C22 55%, #2E0A1B 100%);
+  --grad-section: linear-gradient(180deg, var(--wine-800), var(--wine-900));
+  --grad-prize: linear-gradient(150deg, var(--plum-500), var(--wine-500));
+  --grad-card: linear-gradient(180deg, rgba(255,243,224,0.09), rgba(255,243,224,0.03));
+  --grad-veil: linear-gradient(180deg, rgba(46,10,27,0.12) 0%, rgba(46,10,27,0.4) 55%, var(--wine-900) 100%);
+  --grad-glow: radial-gradient(closest-side, rgba(240,212,138,0.32), transparent);
+  --grad-filmstrip: repeating-linear-gradient(90deg, var(--gold-300) 0 12px, transparent 12px 24px);
+}

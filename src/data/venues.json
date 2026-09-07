@@ -1,0 +1,30 @@
+[
+  {
+    "name": "Dobó tér",
+    "when": "Mindhárom este 18.00-tól",
+    "address": "Dobó István tér, Eger",
+    "desc": "A fesztivál szíve: akusztikus fellépők, közönségtalálkozók, majd a nagy vetítések.",
+    "icon": "M4 20h16M6 20V9l6-4 6 4v11M10 20v-6h4v6",
+    "mapsLink": "https://www.google.com/maps/search/?api=1&query=Dob%C3%B3%20Istv%C3%A1n%20t%C3%A9r%2C%20Eger",
+    "coords": [47.90239, 20.37686]
+  },
+  {
+    "name": "Kertmozi",
+    "when": "Péntek és szombat 19.45",
+    "address": "Egészségház utca, Eger · a régi Kertmozi a Bródy Sándor könyvtár mögötti udvarban",
+    "desc": "Vetítés a szabad ég alatt: családi filmek a nyár utolsó estéin.",
+    "icon": "M3 4h18v11H3zM8 20l4-4 4 4M12 15v1",
+    "mapsLink": "https://www.google.com/maps/search/?api=1&query=47.90048%2C20.37919",
+    "coords": [47.90048, 20.37919],
+    "note": "Kézzel elhelyezett pin, NEM geokódolt: a mozi a Bródy Sándor könyvtár, az Egererdő Zrt. és az Egészségház u. 29/31/3 által közrefogott belső udvar. Utcaszintű geokódolás az épület rossz oldalára tenné. Ne cseréld futásidejű geokódolásra."
+  },
+  {
+    "name": "Agria Park udvar",
+    "when": "Péntek 20.00 · szombat 19.00 és 21.00",
+    "address": "Törvényház utca 4, Eger",
+    "desc": "Esti és késő esti vetítések a park udvarán.",
+    "icon": "M4 21V11a8 8 0 0116 0v10M3 21h18M9.5 21v-6a2.5 2.5 0 015 0v6",
+    "mapsLink": "https://www.google.com/maps/search/?api=1&query=Agria%20Park%2C%20T%C3%B6rv%C3%A9nyh%C3%A1z%20utca%204%2C%20Eger",
+    "coords": [47.90022, 20.36862]
+  }
+]
