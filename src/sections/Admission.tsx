@@ -9,7 +9,7 @@ export function Admission() {
       <div className={`container ${styles.grid}`}>
         <div className={`reveal ${styles.card} ${styles.cream}`} style={reveal(0)}>
           <div className={`${styles.eyebrow} ${styles.eyebrowOnLight}`}>Minden vetítés és program</div>
-          <div className={styles.price}>0 Ft</div>
+          <div className={styles.price}>Ingyenes</div>
           <p className={`${styles.text} ${styles.textOnLight}`}>
             A belépés mindhárom estén, minden helyszínen ingyenes. A helyfoglalás érkezési sorrendben történik, hozz
             plédet vagy összecsukható széket.
