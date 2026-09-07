@@ -24,8 +24,8 @@ function PartnerLogo({ partner }: { partner: Partner }) {
   );
 }
 
-/* Sorrend: partnerlogók → támogatói mondat → hajszálvonal → tagline balra,
-   középen a wordmark és mellette a copyright. */
+/* Sorrend: partnerlogók → támogatói mondat → hajszálvonal → középen a wordmark
+   és mellette a copyright, a tagline a jobb alsó sarokban. */
 export function SiteFooter() {
   return (
     <footer className={styles.footer}>
@@ -37,13 +37,13 @@ export function SiteFooter() {
       <p className={`container ${styles.support}`}>{festival.supportLine}</p>
 
       <div className={`container ${styles.bottom}`}>
-        <div className={styles.tagline}>Eger · A te városod</div>
         <div className={styles.brand}>
           <span className={styles.wordmark}>{festival.name}</span>
           <span className={styles.legal}>
             © {festival.year} {festival.copyright}
           </span>
         </div>
+        <div className={styles.tagline}>Eger · A te városod</div>
       </div>
     </footer>
   );
