@@ -24,7 +24,7 @@ export function Admission() {
             élni nélküled előtt. Szombaton a 10 éjszakás kaland alkotói az Agria Parkban, és Szabó Ádám a Nincs visszaút
             maraton után az Urániában. A terem véges: érdemes időben jönni.
           </p>
-          <Button href={festival.url} size="lg">
+          <Button href={festival.facebookEvent} size="lg" target="_blank" rel="noopener">
             Részletek
           </Button>
         </div>
