@@ -21,7 +21,7 @@
   background-repeat: no-repeat;
 }
 
-/* A vendégportré a fotó duotónjában, jobbra lent, a szélénél elmosva.
+/* A vendégportré eredeti színekben (a megrendelő kérésére szűrő nélkül), jobbra lent, a szélénél elmosva.
    Keskeny képernyőn kisebb és halványabb, hogy a szöveg alatt ne zavarjon. */
 .portrait {
   position: absolute;

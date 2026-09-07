@@ -49,7 +49,7 @@ Ha később CMS lesz, a `src/config.ts` az egyetlen hely, amit cserélni kell.
 index.html                 head: meta, OG, fontok
 public/assets/hero-bg.jpg  a hero fotója (karmazsin duotón), assets-src/photos-ból kicsinyítve
 public/assets/og-image.jpg 1200×630 megosztókép a hero fotóból vágva
-public/assets/portraits/   vendégportrék a fotó duotónjában (scripts/duotone.py állítja elő)
+public/assets/portraits/   vendégportrék (kivágott PNG-ből kicsinyítve, szűrő nélkül)
 public/assets/townscape.png  a story-kártya illusztrációja
 public/assets/logos/       partnerlogók krémre színezve (scripts/tint-logo.py állítja elő)
 assets-src/logos/          a partnerlogók eredeti fájljai (nem kerülnek a buildbe)
@@ -87,10 +87,10 @@ Ha a kezdés az előző programtól függ, add meg a `timeLabel` mezőt („a ve
 meg az idő helyett, és a program kimarad a naptárexportból és a JSON-LD-ből, mert a `time`
 ott csak becslés a rendezéshez.
 
-Egy új vendégportré (kivágott, átlátszó hátterű PNG) így kerül a fotók duotónjába:
+Egy új vendégportré (kivágott, átlátszó hátterű PNG) így kerül be, eredeti színekben:
 
 ```bash
-python scripts/duotone.py assets-src/photos/nev.png public/assets/portraits/nev.webp --height 1200
+python scripts/duotone.py assets-src/photos/nev.png public/assets/portraits/nev.webp --height 1200 --no-tint
 ```
 
 A lábléc partnerei (főszervező, támogató) a `festival.partners` tömbben vannak. A logó a

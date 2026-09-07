@@ -5,13 +5,14 @@ import { reveal } from "../lib/reveal";
 import { Countdown } from "./Countdown";
 import styles from "./Hero.module.css";
 
-/* Rétegek: éjszakai gradiens (tartalék) → fesztiválfotó (karmazsin duotón) →
-   vendégportré ugyanabban a duotónban → fátyol a borszínű alapba → tartalom. */
+/* Rétegek: éjszakai gradiens (tartalék) → fesztiválfotó (karmazsin duotón) → fátyol a
+   borszínű alapba → vendégportré eredeti színekben, a fátyol fölött, szűrő nélkül → tartalom. */
 export function Hero() {
   return (
     <section id="top" className={styles.hero}>
       <div className={styles.night} aria-hidden="true" />
       <div className={styles.photo} aria-hidden="true" />
+      <div className={styles.veil} aria-hidden="true" />
       <img
         className={styles.portrait}
         src={asset("/assets/portraits/torocsik.webp")}
@@ -20,7 +21,6 @@ export function Hero() {
         height={1200}
         fetchPriority="high"
       />
-      <div className={styles.veil} aria-hidden="true" />
 
       <div className={styles.content}>
         <p className={`reveal ${styles.eyebrow}`} style={reveal(0)}>

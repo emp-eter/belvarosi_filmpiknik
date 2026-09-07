@@ -24,8 +24,9 @@ visual rules.
 - Colours only from tokens: wine, gold, cream, rose, plus the crimson trio for photo surfaces
   only (hero background, portraits). Never introduce another hue or a grey.
   Gold is rationed (numbers, eyebrows, one primary button per region, hairlines).
-- Photos are duotoned into the crimson palette with `scripts/duotone.py`; the client supplies
-  cut-out portraits (this overrides the handoff's silhouette rule).
+- The hero photo is a crimson duotone; guest portraits are cut-out photos in original colour,
+  no filter, at the client's request (this overrides the handoff's silhouette rule).
+  `scripts/duotone.py` resizes (and can tint) them.
 - Sizes are fluid `clamp()`; no media queries, grids are `repeat(auto-fit, minmax(...))`.
 - Keep the `prefers-reduced-motion` block in `global.css`. Only two keyframes: `fpReveal`, `fpGlow`.
 - Programme data lives in `src/data/programme.json` and `venues.json`, not in components.
