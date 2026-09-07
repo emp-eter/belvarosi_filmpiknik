@@ -1,41 +1,19 @@
 .footer {
-  padding: clamp(32px, 5vw, 58px) 0;
+  padding: clamp(32px, 5vw, 58px) 0 clamp(28px, 4vw, 44px);
   border-top: 1px solid var(--border-hairline);
-}
-.inner {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
-  justify-content: space-between;
-  align-items: flex-end;
-}
-.wordmark {
-  font-family: var(--font-display);
-  font-size: clamp(22px, 3vw, 30px);
-  color: var(--text-primary);
-}
-.tagline {
-  font-size: 12px;
-  font-weight: var(--weight-bold);
-  letter-spacing: 2.6px;
-  text-transform: uppercase;
-  color: var(--text-accent);
 }
 
-/* Partnerek: főszervező és támogató logója, egy hajszálvonal alatt. */
+/* Partnerek: főszervező és főtámogató logója, a lábléc tetején. */
 .partners {
-  margin-top: clamp(24px, 4vw, 40px);
-  padding-top: clamp(20px, 3vw, 28px);
-  border-top: 1px solid var(--border-hairline);
   display: flex;
   flex-wrap: wrap;
-  gap: clamp(24px, 4vw, 56px);
+  gap: clamp(28px, 5vw, 72px);
   align-items: flex-start;
 }
 .partner {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 12px;
 }
 .partnerRole {
   font-size: 10.5px;
@@ -48,12 +26,12 @@
 .partnerLink {
   display: inline-flex;
   align-items: center;
-  height: clamp(36px, 4.4vw, 48px);
-  opacity: 0.85;
+  height: clamp(48px, 6vw, 64px);
+  opacity: 0.9;
   transition: opacity var(--dur-fast) ease;
 }
 .partnerLg {
-  height: clamp(56px, 7vw, 80px);
+  height: clamp(76px, 9.5vw, 108px);
 }
 .partnerLink:hover,
 .partnerLink:focus-visible {
@@ -64,23 +42,64 @@
   display: block;
   height: 100%;
   width: auto;
-  max-width: min(280px, 70vw);
+  max-width: min(360px, 80vw);
   object-fit: contain;
-}
-.support {
-  margin: clamp(20px, 3vw, 28px) auto 0;
-  font-size: 13px;
-  line-height: 1.6;
-  color: var(--text-muted);
-}
-.legal {
-  margin: 8px auto 0;
-  font-size: 12px;
-  line-height: 1.6;
-  color: var(--text-subtle);
 }
 .partnerName {
   font-size: clamp(16px, 2vw, 19px);
   font-weight: var(--weight-bold);
   color: var(--text-primary);
+}
+
+.support {
+  margin: clamp(18px, 2.6vw, 26px) auto 0;
+  font-size: 13px;
+  line-height: 1.6;
+  color: var(--text-muted);
+}
+
+/* Alsó sor: tagline balra, középen a wordmark és a copyright egymás mellett.
+   Háromoszlopos rács, hogy a középső blokk valóban középen legyen. */
+.bottom {
+  margin-top: clamp(24px, 4vw, 40px);
+  padding-top: clamp(20px, 3vw, 28px);
+  border-top: 1px solid var(--border-hairline);
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  gap: 16px 24px;
+}
+.tagline {
+  font-size: 12px;
+  font-weight: var(--weight-bold);
+  letter-spacing: 2.6px;
+  text-transform: uppercase;
+  color: var(--text-accent);
+}
+.brand {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: center;
+  gap: 8px 18px;
+  text-align: center;
+}
+.wordmark {
+  font-family: var(--font-display);
+  font-size: clamp(22px, 3vw, 30px);
+  color: var(--text-primary);
+}
+.legal {
+  font-size: 12px;
+  line-height: 1.6;
+  color: var(--text-subtle);
+}
+
+/* Keskenyen a rács egy oszlopra esik, minden középre. */
+@media (max-width: 640px) {
+  .bottom {
+    grid-template-columns: 1fr;
+    justify-items: center;
+    text-align: center;
+  }
 }

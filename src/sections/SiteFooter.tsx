@@ -24,24 +24,27 @@ function PartnerLogo({ partner }: { partner: Partner }) {
   );
 }
 
+/* Sorrend: partnerlogók → támogatói mondat → hajszálvonal → tagline balra,
+   középen a wordmark és mellette a copyright. */
 export function SiteFooter() {
   return (
     <footer className={styles.footer}>
-      <div className={`container ${styles.inner}`}>
-        <div className={styles.wordmark}>{festival.name}</div>
-        <div className={styles.tagline}>Eger · A te történeted</div>
-      </div>
-
       <div className={`container ${styles.partners}`}>
         {festival.partners.map((p) => (
           <PartnerLogo key={p.name} partner={p} />
         ))}
       </div>
-
       <p className={`container ${styles.support}`}>{festival.supportLine}</p>
-      <p className={`container ${styles.legal}`}>
-        © {festival.year} {festival.copyright}
-      </p>
+
+      <div className={`container ${styles.bottom}`}>
+        <div className={styles.tagline}>Eger · A te városod</div>
+        <div className={styles.brand}>
+          <span className={styles.wordmark}>{festival.name}</span>
+          <span className={styles.legal}>
+            © {festival.year} {festival.copyright}
+          </span>
+        </div>
+      </div>
     </footer>
   );
 }
