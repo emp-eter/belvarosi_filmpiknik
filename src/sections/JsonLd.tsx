@@ -44,6 +44,7 @@ function buildGraph() {
     "@type": "Festival",
     name: `${festival.name} ${festival.year}`,
     url: festival.siteUrl,
+    sameAs: [festival.facebookEvent],
     startDate: days[0].date,
     endDate: days[days.length - 1].date,
     location: place("Dobó tér"),

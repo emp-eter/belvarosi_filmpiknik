@@ -44,6 +44,8 @@ export interface Festival {
   siteUrl: string;
   organiser: string;
   facebook: string;
+  /** A fesztivál hivatalos Facebook-eseménye. */
+  facebookEvent: string;
   rainVenue: string;
   /** A lábléc © sorának tulajdonosa. */
   copyright: string;

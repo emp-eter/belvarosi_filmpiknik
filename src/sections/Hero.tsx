@@ -49,6 +49,9 @@ export function Hero() {
           <Button href="#filmek" size="xl">
             Filmek
           </Button>
+          <Button href={festival.facebookEvent} variant="outline" size="xl" target="_blank" rel="noopener">
+            Facebook-esemény
+          </Button>
         </div>
       </div>
     </section>
