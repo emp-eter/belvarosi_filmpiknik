@@ -58,7 +58,7 @@
   color: var(--text-muted);
 }
 
-/* Alsó sor: balra a wordmark és mellette a copyright, jobb alsó sarokban a tagline. */
+/* Alsó sor: balra a wordmark, jobb alsó sarokban a tagline; alatta középen a copyright. */
 .bottom {
   margin-top: clamp(24px, 4vw, 40px);
   padding-top: clamp(20px, 3vw, 28px);
@@ -68,12 +68,6 @@
   justify-content: space-between;
   align-items: flex-end;
   gap: 16px 24px;
-}
-.brand {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: baseline;
-  gap: 8px 18px;
 }
 .tagline {
   margin-left: auto;
@@ -90,6 +84,8 @@
   color: var(--text-primary);
 }
 .legal {
+  margin: clamp(20px, 3vw, 32px) auto 0;
+  text-align: center;
   font-size: 12px;
   line-height: 1.6;
   color: var(--text-subtle);
