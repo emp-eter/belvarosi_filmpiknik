@@ -15,11 +15,11 @@ export function Venues() {
     <section id="terkep" className={styles.section}>
       <div className="container">
         <h2 className={`reveal ${styles.title}`} style={reveal(0)}>
-          Három helyszín, három hangulat
+          Négy helyszín, négy hangulat
         </h2>
         <p className={`reveal ${styles.lead}`} style={reveal(110)}>
-          A Dobó tér a fesztivál szíve, a Kertmozi és az Agria Park udvara innen 10–15 perc séta. Vidd az ujjad a
-          helyszínekre a teljes műsorért.
+          A Dobó tér a fesztivál szíve, a Régi Kertmozi, az Agria Park udvara és az Uránia Mozi innen pár perc séta.
+          Vidd az ujjad a helyszínekre a teljes műsorért.
         </p>
 
         <div className={styles.grid}>

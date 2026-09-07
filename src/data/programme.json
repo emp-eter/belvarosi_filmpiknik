@@ -12,6 +12,7 @@
     "facebook": "https://www.facebook.com/egermozi",
     "rainVenue": "Uránia Mozi",
     "copyright": "CinemaCenter",
+    "supportLine": "Az esemény a Nemzeti Kulturális Alap támogatásával valósul meg.",
     "partners": [
       {
         "role": "Főszervező",
@@ -37,7 +38,7 @@
       "films": [
         {
           "time": "18.00",
-          "title": "Magyar Balázs",
+          "title": "Magyar Balázs akusztik",
           "venue": "Dobó tér",
           "min": 45,
           "tags": ["Élő"],
@@ -45,11 +46,11 @@
         },
         {
           "time": "19.00",
-          "title": "Herendi és vendége",
+          "title": "Közönségtalálkozó: Herendi Gábor",
           "venue": "Dobó tér",
           "min": 45,
           "tags": ["Élő"],
-          "sub": "Közönségtalálkozó Herendi Gáborral a Kincsem vetítése előtt: kérdezni lehet."
+          "sub": "Beszélgetés a Kincsem, a Valami Amerika, a Futni mentem és a Szenvedélyes nők rendezőjével, közvetlenül a vetítés előtt."
         },
         {
           "time": "19.45",
@@ -80,43 +81,32 @@
       "date": "2026-09-18",
       "films": [
         {
+          "time": "17.30",
+          "title": "Donnie Darko · 25 éves évforduló",
+          "venue": "Uránia Mozi",
+          "min": 113,
+          "rating": 16,
+          "tags": [],
+          "sub": "Kultikus sci-fi dráma jubileumi vetítésen: huszonöt éve Donnie, a nyúl és a világvége visszaszámlálása."
+        },
+        {
           "time": "18.00",
-          "title": "Aleva Zsófi",
+          "title": "Akusztikus fellépő",
           "venue": "Dobó tér",
           "min": 45,
           "tags": ["Élő"],
-          "sub": "Akusztikus szett a péntek esti vetítések előtt."
+          "sub": "Akusztikus szett a péntek esti vetítések előtt. A fellépő nevét hamarosan kihirdetjük."
         },
         {
           "time": "19.00",
-          "title": "Közönségtalálkozó: Törőcsik Franciska",
+          "title": "Közönségtalálkozó: Hogyan tudnék élni nélküled",
           "venue": "Dobó tér",
           "min": 45,
           "tags": ["Élő"],
-          "sub": "Beszélgetés a Hogyan tudnék élni nélküled főszereplőjével, közvetlenül a vetítés előtt."
+          "sub": "Vendégek: Törőcsik Franciska színésznő és Dr. Kirády Attila producer, közvetlenül a vetítés előtt."
         },
         {
-          "time": "19.45",
-          "title": "Hogyan tudnék élni nélküled",
-          "venue": "Dobó tér",
-          "min": 105,
-          "rating": 12,
-          "lang": "Magyar film",
-          "tags": [],
-          "sub": "Magyar romantikus vígjáték szerelemről és önismeretről, Törőcsik Franciskával a főszerepben."
-        },
-        {
-          "time": "19.45",
-          "title": "Zootropolis 2.",
-          "venue": "Kertmozi",
-          "min": 108,
-          "rating": 6,
-          "lang": "Magyar szinkron",
-          "tags": ["Családi"],
-          "sub": "Judy és Nick új nyomozása az állatvárosban — a legkisebbeknek is, a csillagos ég alatt."
-        },
-        {
-          "time": "20.00",
+          "time": "19.30",
           "title": "Az ördög Pradát visel 2.",
           "venue": "Agria Park udvar",
           "min": 115,
@@ -126,8 +116,38 @@
           "sub": "Visszatér a divatvilág legfélelmetesebb főszerkesztője; szatíra hatalomról és stílusról."
         },
         {
+          "time": "19.45",
+          "title": "Hogyan tudnék élni nélküled?",
+          "venue": "Dobó tér",
+          "min": 105,
+          "rating": 12,
+          "lang": "Magyar film",
+          "tags": [],
+          "sub": "Magyar romantikus vígjáték szerelemről és önismeretről, Törőcsik Franciskával a főszerepben. A fesztiválon egy extra jelenettel."
+        },
+        {
+          "time": "19.45",
+          "title": "Jurassic World: Újjászületés",
+          "venue": "Régi Kertmozi",
+          "min": 133,
+          "rating": 12,
+          "lang": "Magyar szinkron",
+          "tags": ["Családi"],
+          "sub": "Dinoszauruszok a szabad ég alatt: a franchise új fejezete a Kertmozi vásznán."
+        },
+        {
+          "time": "21.30",
+          "title": "Backrooms – Hátsó szobák",
+          "venue": "Agria Park udvar",
+          "min": 100,
+          "rating": 16,
+          "lang": "Magyar szinkron",
+          "tags": ["Késő esti"],
+          "sub": "Internetes rémlegendából született horror a végtelen, sárga szobák világáról. Erős idegzetűeknek."
+        },
+        {
           "time": "21.45",
-          "title": "Pókember – Brand New Day",
+          "title": "Pókember – Vadonatúj nap",
           "venue": "Dobó tér",
           "min": 150,
           "rating": 12,
@@ -144,22 +164,36 @@
       "date": "2026-09-19",
       "films": [
         {
+          "time": "12.00",
+          "title": "No Way Back – Nincs visszaút maraton",
+          "venue": "Uránia Mozi",
+          "tags": [],
+          "sub": "Az egész sorozat egyben levetítve, egy ültő helyben, a vetítés után beszélgetéssel."
+        },
+        {
+          "time": "16.00",
+          "timeLabel": "a maraton után",
+          "title": "Közönségtalálkozó: Szabó Ádám",
+          "venue": "Uránia Mozi",
+          "min": 45,
+          "tags": ["Élő"],
+          "sub": "Beszélgetés a Nincs visszaút főszereplőjével és rendezőjével, közvetlenül a maraton után."
+        },
+        {
           "time": "19.00",
-          "title": "Lajtha Néptánc bemutató",
+          "title": "Lajtha László Néptáncegyüttes bemutatója",
           "venue": "Dobó tér",
           "min": 40,
           "tags": ["Élő", "Családi"],
           "sub": "A Lajtha együttes műsora nyitja a záróestét, élő zenével."
         },
         {
-          "time": "19.00",
-          "title": "Backrooms – Hátsó szobák",
+          "time": "19.30",
+          "title": "10 éjszakás kaland",
           "venue": "Agria Park udvar",
-          "min": 100,
-          "rating": 16,
-          "lang": "Magyar szinkron",
+          "lang": "Magyar film",
           "tags": [],
-          "sub": "Internetes rémlegendából született horror a végtelen, sárga szobák világáról. Erős idegzetűeknek."
+          "sub": "Magyar film az Agria Park udvarán. A vetítés után az alkotók beszélgetnek a közönséggel."
         },
         {
           "time": "19.45",
@@ -173,23 +207,22 @@
         },
         {
           "time": "19.45",
-          "title": "Jurassic World: Újjászületés",
-          "venue": "Kertmozi",
-          "min": 133,
-          "rating": 12,
+          "title": "Zootropolis 2.",
+          "venue": "Régi Kertmozi",
+          "min": 108,
+          "rating": 6,
           "lang": "Magyar szinkron",
           "tags": ["Családi"],
-          "sub": "Dinoszauruszok a szabad ég alatt: a franchise új fejezete a Kertmozi vásznán."
+          "sub": "Judy és Nick új nyomozása az állatvárosban, a legkisebbeknek is, a csillagos ég alatt."
         },
         {
-          "time": "21.00",
-          "title": "Öt éjjel Freddy pizzázójában 2.",
+          "time": "21.15",
+          "timeLabel": "a vetítés után",
+          "title": "Közönségtalálkozó: a 10 éjszakás kaland alkotói",
           "venue": "Agria Park udvar",
-          "min": 110,
-          "rating": 16,
-          "lang": "Magyar szinkron",
-          "tags": ["Késő esti"],
-          "sub": "Az animatronikus szörnyek visszatérnek — a videójáték-horror folytatása, késő esti sávban."
+          "min": 45,
+          "tags": ["Élő"],
+          "sub": "Nyári Diana, Péterfi Bori és Fekete Ernő színészek, valamint Kalmár Péter író-producer."
         },
         {
           "time": "21.30",
@@ -199,7 +232,17 @@
           "rating": 12,
           "lang": "Magyar film",
           "tags": ["Késő esti"],
-          "sub": "A fesztivál záró vetítése: magyar film a hazatalálásról, a főtéren, éjszakai hangulatban."
+          "sub": "A fesztivál záró vetítése a főtéren: magyar film a hazatalálásról, éjszakai hangulatban."
+        },
+        {
+          "time": "21.45",
+          "title": "Öt éjjel Freddy pizzázójában 2.",
+          "venue": "Régi Kertmozi",
+          "min": 110,
+          "rating": 16,
+          "lang": "Magyar szinkron",
+          "tags": ["Késő esti"],
+          "sub": "Az animatronikus szörnyek visszatérnek: a videójáték-horror folytatása, késő esti sávban."
         }
       ]
     }

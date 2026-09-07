@@ -1,18 +1,18 @@
 [
   {
     "name": "Dobó tér",
-    "when": "Mindhárom este 18.00-tól",
+    "when": "Csütörtök és péntek 18.00-tól · szombat 19.00-tól",
     "address": "Dobó István tér, Eger",
-    "desc": "A fesztivál szíve: akusztikus fellépők, közönségtalálkozók, majd a nagy vetítések.",
+    "desc": "A fesztivál szíve: akusztikus fellépők, közönségtalálkozók, néptánc, majd a nagy vetítések.",
     "icon": "M4 20h16M6 20V9l6-4 6 4v11M10 20v-6h4v6",
     "mapsLink": "https://www.google.com/maps/search/?api=1&query=Dob%C3%B3%20Istv%C3%A1n%20t%C3%A9r%2C%20Eger",
     "coords": [47.90239, 20.37686]
   },
   {
-    "name": "Kertmozi",
-    "when": "Péntek és szombat 19.45",
-    "address": "Egészségház utca, Eger · a régi Kertmozi a Bródy Sándor könyvtár mögötti udvarban",
-    "desc": "Vetítés a szabad ég alatt: családi filmek a nyár utolsó estéin.",
+    "name": "Régi Kertmozi",
+    "when": "Péntek 19.45 · szombat 19.45 és 21.45",
+    "address": "Egészségház út, Eger · a régi Kertmozi a Bródy Sándor könyvtár mögötti udvarban",
+    "desc": "Vetítés a szabad ég alatt: családi filmek és egy késő esti horror a nyár utolsó estéin.",
     "icon": "M3 4h18v11H3zM8 20l4-4 4 4M12 15v1",
     "mapsLink": "https://www.google.com/maps/search/?api=1&query=47.90048%2C20.37919",
     "coords": [47.90048, 20.37919],
@@ -20,11 +20,21 @@
   },
   {
     "name": "Agria Park udvar",
-    "when": "Péntek 20.00 · szombat 19.00 és 21.00",
+    "when": "Péntek 19.30 és 21.30 · szombat 19.30",
     "address": "Törvényház utca 4, Eger",
-    "desc": "Esti és késő esti vetítések a park udvarán.",
+    "desc": "Esti és késő esti vetítések a park udvarán, szombaton közönségtalálkozóval.",
     "icon": "M4 21V11a8 8 0 0116 0v10M3 21h18M9.5 21v-6a2.5 2.5 0 015 0v6",
     "mapsLink": "https://www.google.com/maps/search/?api=1&query=Agria%20Park%2C%20T%C3%B6rv%C3%A9nyh%C3%A1z%20utca%204%2C%20Eger",
     "coords": [47.90022, 20.36862]
+  },
+  {
+    "name": "Uránia Mozi",
+    "when": "Péntek 17.30 · szombat 12.00-tól",
+    "address": "Széchenyi István utca 14, Eger",
+    "desc": "Jubileumi vetítés, sorozatmaraton közönségtalálkozóval, és a fesztivál alatt ingyenes filmes LEGO-kiállítás.",
+    "icon": "M3 10h18v11H3zM3 10l2-5h14l2 5M12 10v11M8 10l1-5M16 10l-1-5",
+    "mapsLink": "https://www.google.com/maps/search/?api=1&query=Ur%C3%A1nia%20Mozi%2C%20Eger",
+    "coords": [47.9033, 20.3741],
+    "note": "Hozzávetőleges pin a Széchenyi utcai bejáratnál, a szervezőkkel egyeztetendő."
   }
 ]

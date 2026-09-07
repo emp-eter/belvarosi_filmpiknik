@@ -1,4 +1,4 @@
-import { allEntries, days, festival, venues } from "../data/programme";
+import { days, festival, scheduledEntries, venues } from "../data/programme";
 import { eventFor } from "../lib/calendar";
 
 /* Festival + ScreeningEvent gráf ugyanabból a műsoradatból, amit az oldal mutat. */
@@ -21,7 +21,7 @@ function buildGraph() {
     url: festival.siteUrl,
   };
 
-  const subEvents = allEntries.map((entry) => {
+  const subEvents = scheduledEntries.map((entry) => {
     const ev = eventFor(entry);
     const isFilm = !entry.film.tags.includes("Élő");
     return {

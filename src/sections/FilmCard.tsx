@@ -1,6 +1,7 @@
 import { Badge } from "../components/ui/Badge";
 import { Button } from "../components/ui/Button";
 import { Icon, ICONS } from "../components/ui/Icon";
+import { timeText } from "../data/programme";
 import type { Entry } from "../data/types";
 import { buildIcs, downloadIcs, eventFor, googleUrl, icsFilename, outlookUrl } from "../lib/calendar";
 import styles from "./FilmCard.module.css";
@@ -35,7 +36,7 @@ export function FilmCard({ entry, calOpen, onToggleCal, onCloseCal, onShare }: F
       <div className={styles.filmstrip} aria-hidden="true" />
       <div className={styles.body}>
         <span className={styles.when}>
-          {day.short} · {film.time}
+          {day.short} · {timeText(film)}
         </span>
         <h3 className={styles.title}>{film.title}</h3>
         {badges.length > 0 ? (
@@ -49,12 +50,15 @@ export function FilmCard({ entry, calOpen, onToggleCal, onCloseCal, onShare }: F
         <span className={styles.venue}>{film.venue}</span>
 
         <div className={styles.actions}>
-          <Button variant="ghostGold" size="sm" pill aria-expanded={calOpen} aria-haspopup="menu" title="Naptárba mentés" onClick={onToggleCal}>
-            <Icon path={ICONS.calendar} size={14} strokeWidth={1.8} />
-            Naptárba
-          </Button>
+          {/* Becsült kezdésű program ("a vetítés után") nem kerül naptárba. */}
+          {film.timeLabel ? null : (
+            <Button variant="ghostGold" size="sm" pill aria-expanded={calOpen} aria-haspopup="menu" title="Naptárba mentés" onClick={onToggleCal}>
+              <Icon path={ICONS.calendar} size={14} strokeWidth={1.8} />
+              Naptárba
+            </Button>
+          )}
 
-          {calOpen ? (
+          {calOpen && !film.timeLabel ? (
             <div className={styles.menu} role="menu" aria-label="Naptárba mentés">
               <a className={styles.menuRow} role="menuitem" href={googleUrl(ev)} target="_blank" rel="noopener" onClick={onCloseCal}>
                 Google Naptár

@@ -67,8 +67,14 @@
   max-width: min(280px, 70vw);
   object-fit: contain;
 }
-.legal {
+.support {
   margin: clamp(20px, 3vw, 28px) auto 0;
+  font-size: 13px;
+  line-height: 1.6;
+  color: var(--text-muted);
+}
+.legal {
+  margin: 8px auto 0;
   font-size: 12px;
   line-height: 1.6;
   color: var(--text-subtle);

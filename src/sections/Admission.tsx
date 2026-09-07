@@ -17,11 +17,12 @@ export function Admission() {
         </div>
 
         <div className={`reveal ${styles.card} ${styles.dashed}`} style={reveal(110)}>
-          <div className={styles.eyebrow}>Közönségtalálkozók · Dobó tér</div>
-          <div className={`${styles.headline} ${styles.headlineMeet}`}>Herendi Gábor és Törőcsik Franciska</div>
+          <div className={styles.eyebrow}>Közönségtalálkozók · mindhárom nap</div>
+          <div className={`${styles.headline} ${styles.headlineMeet}`}>Rendezők, színészek, producerek</div>
           <p className={`${styles.text} ${styles.textSpaced}`}>
-            Csütörtökön Herendi Gábor a Kincsem előtt, pénteken Törőcsik Franciska a Hogyan tudnék élni nélküled előtt.
-            A terem véges: érdemes időben jönni.
+            Csütörtökön Herendi Gábor a Kincsem előtt, pénteken Törőcsik Franciska és Dr. Kirády Attila a Hogyan tudnék
+            élni nélküled előtt. Szombaton a 10 éjszakás kaland alkotói az Agria Parkban, és Szabó Ádám a Nincs visszaút
+            maraton után az Urániában. A terem véges: érdemes időben jönni.
           </p>
           <Button href={festival.url} size="lg">
             Részletek
@@ -41,8 +42,9 @@ export function Admission() {
       </div>
 
       <p className={`container ${styles.note}`}>
-        Büfé széles kínálattal minden helyszínen. Rossz idő esetén az {festival.rainVenue} az esőhelyszín. A
-        műsorváltoztatás jogát fenntartjuk.
+        Büfé széles kínálattal minden helyszínen. Az Uránia Moziban a fesztivál alatt ingyenes filmes LEGO-kiállítás
+        várja a látogatókat. Rossz idő esetén az {festival.rainVenue} az esőhelyszín. A műsorváltoztatás jogát
+        fenntartjuk.
       </p>
     </section>
   );

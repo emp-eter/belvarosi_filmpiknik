@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import { Button } from "../components/ui/Button";
-import { festival } from "../data/programme";
+import { festival, timeText } from "../data/programme";
 import type { Entry } from "../data/types";
 import { useEscape } from "../hooks/useEscape";
 import styles from "./StoryOverlay.module.css";
@@ -41,7 +41,7 @@ export function StoryOverlay({ entry, onClose }: StoryOverlayProps) {
 
   if (!entry) return null;
   const { day, film } = entry;
-  const when = `${day.label} · ${film.time}`;
+  const when = `${day.label} · ${timeText(film)}`;
   const venueLine = `${film.venue} · ingyenes`;
 
   const share = () => {

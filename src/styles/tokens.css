@@ -83,6 +83,16 @@
   --grad-filmstrip: repeating-linear-gradient(90deg, var(--gold-300) 0 12px, transparent 12px 24px);
 }
 
+/* ══ bővítés: karmazsin (a fesztivál fotóinak duotónja) ══
+   A hatter_filmpiknik.jpg színvilágából mintázva. Csak a fotós felületeken:
+   hero háttér és portrék. Az UI-akcent marad az arany. */
+:root {
+  --crimson-700: #8E1A3C;
+  --crimson-500: #C41E4C;
+  --crimson-300: #E8628A;
+  --grad-photo-veil: linear-gradient(180deg, rgba(46, 10, 27, 0.2) 0%, rgba(46, 10, 27, 0.32) 50%, var(--wine-900) 100%);
+}
+
 /* ══ tokens/typography.css ══ */
 :root {
   /* Fluid display sizes: the page is one column that scales, never a breakpoint switch. */

@@ -1,20 +1,30 @@
 import { Button } from "../components/ui/Button";
 import { days, festival, filmCount, venues } from "../data/programme";
+import { asset } from "../lib/asset";
 import { reveal } from "../lib/reveal";
 import { Countdown } from "./Countdown";
 import styles from "./Hero.module.css";
 
+/* Rétegek: éjszakai gradiens (tartalék) → fesztiválfotó (karmazsin duotón) →
+   vendégportré ugyanabban a duotónban → fátyol a borszínű alapba → tartalom. */
 export function Hero() {
   return (
     <section id="top" className={styles.hero}>
       <div className={styles.night} aria-hidden="true" />
-      <div className={styles.townscape} aria-hidden="true" />
-      <div className={styles.glow} aria-hidden="true" />
+      <div className={styles.photo} aria-hidden="true" />
+      <img
+        className={styles.portrait}
+        src={asset("/assets/portraits/torocsik.webp")}
+        alt="Törőcsik Franciska, a péntek esti közönségtalálkozó vendége"
+        width={820}
+        height={1200}
+        fetchPriority="high"
+      />
       <div className={styles.veil} aria-hidden="true" />
 
       <div className={styles.content}>
         <p className={`reveal ${styles.eyebrow}`} style={reveal(0)}>
-          Eger történelmi belvárosa · {days.length} este · {venues.length} helyszín · {filmCount} film
+          Eger történelmi belvárosa · {days.length} nap · {venues.length} helyszín · {filmCount} film
         </p>
         <h1 className={`reveal ${styles.headline}`} style={reveal(110)}>
           Belvárosi
@@ -26,6 +36,10 @@ export function Hero() {
           <span className={styles.divider} aria-hidden="true" />
           <span className={styles.after}>Naplemente után</span>
         </div>
+        <p className={`reveal ${styles.lead}`} style={reveal(280)}>
+          Közönségtalálkozók, magyar és nemzetközi filmek, premierek, jubileumi vetítések, élőzene, táncbemutató és
+          egy ingyenes filmes LEGO-kiállítás. Minden film, program és közönségtalálkozó ingyenes.
+        </p>
 
         <div className="reveal" style={{ ...reveal(330), marginTop: "clamp(24px, 4vw, 40px)" }}>
           <Countdown target={festival.opening} />

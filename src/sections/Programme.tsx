@@ -2,7 +2,7 @@ import { useCallback, useEffect, useRef, useState } from "react";
 import { Button } from "../components/ui/Button";
 import { Chip } from "../components/ui/Chip";
 import { Icon, ICONS } from "../components/ui/Icon";
-import { allEntries, days, entryKey, TAG_LABELS, TAGS, VENUE_NAMES } from "../data/programme";
+import { days, entryKey, scheduledEntries, TAG_LABELS, TAGS, VENUE_NAMES } from "../data/programme";
 import type { Entry, Tag, VenueName } from "../data/types";
 import { useEscape } from "../hooks/useEscape";
 import { useOverflowX } from "../hooks/useOverflowX";
@@ -47,7 +47,7 @@ export function Programme({ onShare }: ProgrammeProps) {
   }, [calMenu]);
 
   const addWholeFestival = () => {
-    downloadIcs(FESTIVAL_ICS_FILENAME, buildIcs(allEntries.map(eventFor)));
+    downloadIcs(FESTIVAL_ICS_FILENAME, buildIcs(scheduledEntries.map(eventFor)));
   };
 
   const clearFilters = () => {

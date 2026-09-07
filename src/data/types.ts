@@ -1,11 +1,14 @@
-export type VenueName = "Dobó tér" | "Kertmozi" | "Agria Park udvar";
+export type VenueName = "Dobó tér" | "Régi Kertmozi" | "Agria Park udvar" | "Uránia Mozi";
 export type Tag = "Élő" | "Családi" | "Késő esti";
 export type Lang = "Magyar film" | "Magyar szinkron";
 export type Rating = 6 | 12 | 16;
 
 export interface Film {
-  /** "19.45" — magyar írásmód, ponttal. */
+  /** "19.45" — magyar írásmód, ponttal. Rendezéshez és naptárhoz. */
   time: string;
+  /** Ha a kezdés az előző programtól függ ("a vetítés után"): ez jelenik meg az idő
+      helyett, és a program kimarad a naptárexportból, mert a `time` csak becslés. */
+  timeLabel?: string;
   title: string;
   venue: VenueName;
   /** Játékidő percben; a naptárbejegyzés hossza is. Ha hiányzik, 90 perc. */
@@ -44,6 +47,8 @@ export interface Festival {
   rainVenue: string;
   /** A lábléc © sorának tulajdonosa. */
   copyright: string;
+  /** A támogatói mondat a láblécben. */
+  supportLine: string;
   partners: Partner[];
 }
 

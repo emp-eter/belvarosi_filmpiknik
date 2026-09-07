@@ -1,7 +1,7 @@
 import L from "leaflet";
 import "leaflet/dist/leaflet.css";
 import { useEffect, useRef } from "react";
-import { entriesAt, venues } from "../data/programme";
+import { entriesAt, timeText, venues } from "../data/programme";
 import "./VenueMap.css";
 
 /* Leaflet + OpenStreetMap raszter csempék, a --map-tile-filter szűrővel a
@@ -37,7 +37,7 @@ export function VenueMap() {
       const rows = entriesAt(v.name)
         .map(
           ({ day, film }) =>
-            `<div class="fp-row"><span class="fp-time">${esc(day.abbr)} · ${esc(film.time)}</span><span class="fp-title">${esc(film.title)}</span></div>`,
+            `<div class="fp-row"><span class="fp-time">${esc(day.abbr)} · ${esc(timeText(film))}</span><span class="fp-title">${esc(film.title)}</span></div>`,
         )
         .join("");
 

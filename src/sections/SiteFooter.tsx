@@ -38,6 +38,7 @@ export function SiteFooter() {
         ))}
       </div>
 
+      <p className={`container ${styles.support}`}>{festival.supportLine}</p>
       <p className={`container ${styles.legal}`}>
         © {festival.year} {festival.copyright}
       </p>

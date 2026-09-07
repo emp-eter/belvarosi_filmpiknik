@@ -1,8 +1,8 @@
 # Belvárosi Filmpiknik 2026 — promo weblap
 
 Egyoldalas promóoldal az egri **Belvárosi Filmpiknik** szabadtéri filmfesztiválhoz
-(2026. szeptember 17–19., három este, három helyszín, minden program ingyenes).
-Szervező: Uránia Mozi és Rendezvényközpont.
+(2026. szeptember 17–19., három nap, négy helyszín, minden program ingyenes).
+Főszervező: CinemaCenter, főtámogató: Nemzeti Kulturális Alap.
 
 A design forrása a `design_handoff_filmpiknik/` mappa. Ott a `README.md` a specifikáció,
 a `design/Filmpiknik Promo.dc.html` a prototípus, a `tokens/` a tokenek. Ha a kód és a
@@ -47,16 +47,20 @@ Ha később CMS lesz, a `src/config.ts` az egyetlen hely, amit cserélni kell.
 
 ```
 index.html                 head: meta, OG, fontok
-public/assets/townscape.png  a hero és a story-kártya illusztrációja
+public/assets/hero-bg.jpg  a hero fotója (karmazsin duotón), assets-src/photos-ból kicsinyítve
+public/assets/og-image.jpg 1200×630 megosztókép a hero fotóból vágva
+public/assets/portraits/   vendégportrék a fotó duotónjában (scripts/duotone.py állítja elő)
+public/assets/townscape.png  a story-kártya illusztrációja
 public/assets/logos/       partnerlogók krémre színezve (scripts/tint-logo.py állítja elő)
 assets-src/logos/          a partnerlogók eredeti fájljai (nem kerülnek a buildbe)
 scripts/tint-logo.py       fekete PNG → krém, a lábléchez
+scripts/duotone.py         fotó → bordó-karmazsin duotón (portrék), illetve kicsinyítés
 src/
   main.tsx, App.tsx        belépési pont; a szekciók sorrendje az App-ban
   config.ts                a szervezői kapcsoló (esősáv)
   data/
     programme.json         a teljes műsor (napok, filmek) — ITT szerkeszd a programot
-    venues.json            a három helyszín: cím, ikon, koordináta, Google Maps link
+    venues.json            a négy helyszín: cím, ikon, koordináta, Google Maps link
     types.ts               a fenti két fájl típusai
     programme.ts           tipizált export + segédek (entriesAt, entryKey, filmCount…)
   lib/
@@ -75,10 +79,19 @@ src/
 ## Adatszerkesztés
 
 A műsor a `src/data/programme.json`-ban él. Egy film mezői: `time` („19.45”, ponttal),
-`title`, `venue` (a három helyszínnév egyike), `min` (játékidő, a naptárbejegyzés hossza is),
+`title`, `venue` (a négy helyszínnév egyike), `min` (játékidő, a naptárbejegyzés hossza is),
 `rating` (6/12/16, opcionális), `lang` („Magyar film” / „Magyar szinkron”, opcionális),
 `tags` (`Élő`, `Családi`, `Késő esti` bármelyike), `sub` (egy-két mondat).
 A címkék a kártyán ezekből származnak; ami hiányzik, az nem jelenik meg.
+Ha a kezdés az előző programtól függ, add meg a `timeLabel` mezőt („a vetítés után”): ez jelenik
+meg az idő helyett, és a program kimarad a naptárexportból és a JSON-LD-ből, mert a `time`
+ott csak becslés a rendezéshez.
+
+Egy új vendégportré (kivágott, átlátszó hátterű PNG) így kerül a fotók duotónjába:
+
+```bash
+python scripts/duotone.py assets-src/photos/nev.png public/assets/portraits/nev.webp --height 1200
+```
 
 A lábléc partnerei (főszervező, támogató) a `festival.partners` tömbben vannak. A logó a
 `public/assets/logos/` mappából jön; egy új fekete-átlátszó PNG-t így készíts elő:
@@ -94,13 +107,15 @@ A helyszínek koordinátái kézzel vannak elhelyezve, a Kertmozi szándékosan 
 
 ## Indulás előtt
 
-- [ ] 1200×630 `og:image` legyártása (townscape a `--grad-night`-on, wordmark + dátum), az
-      `index.html`-ben a `/assets/townscape.png` cseréje
+- [ ] Az `og:image` abszolút URL-je az `index.html`-ben a Pages-címre mutat; éles domainnél cserélni
 - [ ] Kanonikus URL ellenőrzése (`index.html` + `programme.json` → `siteUrl`)
-- [ ] Korhatárok, valamint a *Michael* és a *Backrooms* játékidejének megerősítése a szervezőkkel
+- [ ] Korhatárok és játékidők megerősítése a szervezőkkel (a *10 éjszakás kaland* és a *Nincs visszaút*
+      maraton hossza hiányzik, a *Michael* és a *Backrooms* becslés)
+- [ ] Péntek 18.00 akusztikus fellépő neve
+- [ ] Uránia Mozi koordinátája hozzávetőleges (`venues.json`), egyeztetendő
+- [ ] A közönségtalálkozók becsült kezdése („a vetítés után”: 21.15 és 16.00) csak a rendezéshez van
 - [ ] Dobó tér és Agria Park koordináták megerősítése: a handoff README táblázata és a
       `design/map.html` eltér, a kód a `map.html` értékeit használja
-- [ ] Törőcsik Franciska portré: stúdiófotó kell sima háttérrel (lásd a design-system readme-t)
 
 ## Ismert hiányok
 

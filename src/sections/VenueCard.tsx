@@ -1,5 +1,5 @@
 import { Icon } from "../components/ui/Icon";
-import { entriesAt } from "../data/programme";
+import { entriesAt, timeText } from "../data/programme";
 import type { Venue } from "../data/types";
 import { reveal } from "../lib/reveal";
 import styles from "./VenueCard.module.css";
@@ -63,7 +63,7 @@ export function VenueCard({ index, venue, open, onEnter, onLeave, onToggle }: Ve
             {events.map(({ day, film }) => (
               <div key={`${day.date}-${film.time}-${film.title}`} className={styles.row}>
                 <span className={styles.rowWhen}>
-                  {day.short} · {film.time}
+                  {day.short} · {timeText(film)}
                 </span>
                 <span className={styles.rowTitle}>{film.title}</span>
               </div>

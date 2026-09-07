@@ -21,13 +21,18 @@ visual rules.
 - All copy is Hungarian and final: use it verbatim, informal *tegezés*, no exclamation marks,
   **no emoji**, times written `20.00` (dot, never colon), `·` between peer facts, en dash for
   ranges, no em dashes in new copy.
-- Colours only from tokens: wine, gold, cream, rose. Never introduce a new hue or a grey.
+- Colours only from tokens: wine, gold, cream, rose, plus the crimson trio for photo surfaces
+  only (hero background, portraits). Never introduce another hue or a grey.
   Gold is rationed (numbers, eyebrows, one primary button per region, hairlines).
+- Photos are duotoned into the crimson palette with `scripts/duotone.py`; the client supplies
+  cut-out portraits (this overrides the handoff's silhouette rule).
 - Sizes are fluid `clamp()`; no media queries, grids are `repeat(auto-fit, minmax(...))`.
 - Keep the `prefers-reduced-motion` block in `global.css`. Only two keyframes: `fpReveal`, `fpGlow`.
 - Programme data lives in `src/data/programme.json` and `venues.json`, not in components.
   Badges on film cards are derived from data, never authored.
 - Venue coordinates are hand-placed; never add runtime geocoding (Kertmozi pin is intentional).
+- A film with `timeLabel` ("a vetítés után") has only an estimated `time`: shown by label, excluded
+  from calendar export and JSON-LD.
 - Fonts: Kaushan Script only for the wordmark/hero headline, Space Grotesk for everything else.
 - Interactive elements are real `<button>`/`<a>`; keep visible focus rings and `aria-expanded`.
 - The organiser switch (`rainAlert`) comes from `src/config.ts` via Vite env.
