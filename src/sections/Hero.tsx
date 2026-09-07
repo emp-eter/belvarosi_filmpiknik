@@ -15,7 +15,7 @@ export function Hero() {
       <div className={styles.veil} aria-hidden="true" />
       <img
         className={styles.portrait}
-        src={asset("/assets/portraits/torocsik.webp")}
+        src={asset("/assets/portraits/torocsik-color.webp")}
         alt="Törőcsik Franciska, a péntek esti közönségtalálkozó vendége"
         width={820}
         height={1200}
