@@ -104,16 +104,6 @@
   gap: 1.6cqh;
   flex-wrap: wrap;
 }
-.free {
-  padding: 1.1cqh 2.2cqh;
-  border-radius: var(--radius-pill);
-  background: var(--accent);
-  color: var(--accent-ink);
-  font-size: max(11px, 2cqh);
-  font-weight: var(--weight-bold);
-  letter-spacing: 0.24cqh;
-  text-transform: uppercase;
-}
 .site {
   font-size: max(11px, 2cqh);
   font-weight: var(--weight-bold);
