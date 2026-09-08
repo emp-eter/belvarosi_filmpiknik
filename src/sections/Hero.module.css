@@ -35,14 +35,28 @@
   pointer-events: none;
   user-select: none;
 }
-/* Az oldal egyetlen media query-je: telefonon a portré kisebb, hogy a szöveg
-   mellett elférjen. Szűrő, halványítás, elmosás nincs rajta. */
+/* Az oldal egyetlen media query-je: telefonon a portré nem a szöveg mögé kerül,
+   hanem a folyamban a szövegblokk fölé, jobbra igazítva. Szűrő nincs rajta. */
 @media (max-width: 640px) {
+  .hero {
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: stretch;
+  }
   .portrait {
-    height: min(50%, 400px);
-    max-width: 60vw;
+    position: relative;
+    right: auto;
+    bottom: auto;
+    align-self: flex-end;
+    height: min(38vh, 340px);
+    max-width: 78vw;
+    margin: clamp(24px, 6vw, 40px) var(--gutter-x) 0 0;
+  }
+  .content {
+    padding-top: 8px;
   }
 }
+
 .veil {
   position: absolute;
   inset: 0;
