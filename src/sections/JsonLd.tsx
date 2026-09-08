@@ -23,7 +23,7 @@ function buildGraph() {
 
   const subEvents = scheduledEntries.map((entry) => {
     const ev = eventFor(entry);
-    const isFilm = !entry.film.tags.includes("Élő");
+    const isFilm = !entry.film.tags.includes("Élő") && !entry.film.tags.includes("Kiállítás");
     return {
       "@type": isFilm ? "ScreeningEvent" : "Event",
       name: entry.film.title,

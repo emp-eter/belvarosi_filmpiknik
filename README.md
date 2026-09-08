@@ -81,7 +81,7 @@ src/
 A műsor a `src/data/programme.json`-ban él. Egy film mezői: `time` („19.45”, ponttal),
 `title`, `venue` (a négy helyszínnév egyike), `min` (játékidő, a naptárbejegyzés hossza is),
 `rating` (6/12/16, opcionális), `lang` („Magyar film” / „Magyar szinkron”, opcionális),
-`tags` (`Élő`, `Családi`, `Késő esti` bármelyike), `sub` (egy-két mondat).
+`tags` (`Élő`, `Családi`, `Késő esti`, `Kiállítás` bármelyike), `sub` (egy-két mondat).
 A címkék a kártyán ezekből származnak; ami hiányzik, az nem jelenik meg.
 Ha a kezdés az előző programtól függ, add meg a `timeLabel` mezőt („a vetítés után”): ez jelenik
 meg az idő helyett, és a program kimarad a naptárexportból és a JSON-LD-ből, mert a `time`
@@ -113,6 +113,7 @@ A helyszínek koordinátái kézzel vannak elhelyezve, a Kertmozi szándékosan 
 - [ ] Korhatárok és játékidők megerősítése a szervezőkkel (a *10 éjszakás kaland* és a *Nincs visszaút*
       maraton hossza hiányzik, a *Michael* és a *Backrooms* becslés)
 - [ ] Péntek 18.00 akusztikus fellépő neve
+- [ ] LEGO-kiállítás nyitvatartása és napjai (most péntek–szombat, „a fesztivál alatt”)
 - [ ] Uránia Mozi koordinátája hozzávetőleges (`venues.json`), egyeztetendő
 - [ ] A közönségtalálkozók becsült kezdése („a vetítés után”: 21.15 és 16.00) csak a rendezéshez van
 - [ ] Dobó tér és Agria Park koordináták megerősítése: a handoff README táblázata és a

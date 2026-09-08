@@ -42,7 +42,9 @@
           "title": "Magyar Balázs akusztik",
           "venue": "Dobó tér",
           "min": 45,
-          "tags": ["Élő"],
+          "tags": [
+            "Élő"
+          ],
           "sub": "Akusztikus szett a nyitóest előtt, a téren felállított színpadon."
         },
         {
@@ -50,7 +52,9 @@
           "title": "Közönségtalálkozó: Herendi Gábor",
           "venue": "Dobó tér",
           "min": 45,
-          "tags": ["Élő"],
+          "tags": [
+            "Élő"
+          ],
           "sub": "Beszélgetés a Kincsem, a Valami Amerika, a Futni mentem és a Szenvedélyes nők rendezőjével, közvetlenül a vetítés előtt."
         },
         {
@@ -70,7 +74,9 @@
           "min": 140,
           "rating": 12,
           "lang": "Magyar szinkron",
-          "tags": ["Késő esti"],
+          "tags": [
+            "Késő esti"
+          ],
           "sub": "Nagyszabású zenés életrajzi film, DCI minőségű vetítéssel a fesztivál legnagyobb vásznán."
         }
       ]
@@ -81,6 +87,17 @@
       "abbr": "Pén",
       "date": "2026-09-18",
       "films": [
+        {
+          "time": "10.00",
+          "timeLabel": "a fesztivál alatt",
+          "title": "Filmes LEGO-kiállítás",
+          "venue": "Uránia Mozi",
+          "tags": [
+            "Kiállítás",
+            "Családi"
+          ],
+          "sub": "Ingyenes filmes LEGO-kiállítás az Uránia Moziban, a fesztivál ideje alatt. A nyitvatartást hamarosan pontosítjuk."
+        },
         {
           "time": "17.30",
           "title": "Donnie Darko · 25 éves évforduló",
@@ -95,7 +112,9 @@
           "title": "Akusztikus fellépő",
           "venue": "Dobó tér",
           "min": 45,
-          "tags": ["Élő"],
+          "tags": [
+            "Élő"
+          ],
           "sub": "Akusztikus szett a péntek esti vetítések előtt. A fellépő nevét hamarosan kihirdetjük."
         },
         {
@@ -103,7 +122,9 @@
           "title": "Közönségtalálkozó: Hogyan tudnék élni nélküled",
           "venue": "Dobó tér",
           "min": 45,
-          "tags": ["Élő"],
+          "tags": [
+            "Élő"
+          ],
           "sub": "Vendégek: Törőcsik Franciska színésznő és Dr. Kirády Attila producer, közvetlenül a vetítés előtt."
         },
         {
@@ -133,7 +154,9 @@
           "min": 133,
           "rating": 12,
           "lang": "Magyar szinkron",
-          "tags": ["Családi"],
+          "tags": [
+            "Családi"
+          ],
           "sub": "Dinoszauruszok a szabad ég alatt: a franchise új fejezete a Kertmozi vásznán."
         },
         {
@@ -143,7 +166,9 @@
           "min": 100,
           "rating": 16,
           "lang": "Magyar szinkron",
-          "tags": ["Késő esti"],
+          "tags": [
+            "Késő esti"
+          ],
           "sub": "Internetes rémlegendából született horror a végtelen, sárga szobák világáról. Erős idegzetűeknek."
         },
         {
@@ -153,7 +178,9 @@
           "min": 150,
           "rating": 12,
           "lang": "Magyar szinkron",
-          "tags": ["Késő esti"],
+          "tags": [
+            "Késő esti"
+          ],
           "sub": "Peter Parker új fejezete: nagy tempó, nagy látvány, késő esti vetítés a főtéren."
         }
       ]
@@ -164,6 +191,17 @@
       "abbr": "Szo",
       "date": "2026-09-19",
       "films": [
+        {
+          "time": "10.00",
+          "timeLabel": "a fesztivál alatt",
+          "title": "Filmes LEGO-kiállítás",
+          "venue": "Uránia Mozi",
+          "tags": [
+            "Kiállítás",
+            "Családi"
+          ],
+          "sub": "Ingyenes filmes LEGO-kiállítás az Uránia Moziban, a fesztivál ideje alatt. A nyitvatartást hamarosan pontosítjuk."
+        },
         {
           "time": "12.00",
           "title": "No Way Back – Nincs visszaút maraton",
@@ -177,7 +215,9 @@
           "title": "Közönségtalálkozó: Szabó Ádám",
           "venue": "Uránia Mozi",
           "min": 45,
-          "tags": ["Élő"],
+          "tags": [
+            "Élő"
+          ],
           "sub": "Beszélgetés a Nincs visszaút főszereplőjével és rendezőjével, közvetlenül a maraton után."
         },
         {
@@ -185,7 +225,10 @@
           "title": "Lajtha László Néptáncegyüttes bemutatója",
           "venue": "Dobó tér",
           "min": 40,
-          "tags": ["Élő", "Családi"],
+          "tags": [
+            "Élő",
+            "Családi"
+          ],
           "sub": "A Lajtha együttes műsora nyitja a záróestét, élő zenével."
         },
         {
@@ -213,7 +256,9 @@
           "min": 108,
           "rating": 6,
           "lang": "Magyar szinkron",
-          "tags": ["Családi"],
+          "tags": [
+            "Családi"
+          ],
           "sub": "Judy és Nick új nyomozása az állatvárosban, a legkisebbeknek is, a csillagos ég alatt."
         },
         {
@@ -222,7 +267,9 @@
           "title": "Közönségtalálkozó: a 10 éjszakás kaland alkotói",
           "venue": "Agria Park udvar",
           "min": 45,
-          "tags": ["Élő"],
+          "tags": [
+            "Élő"
+          ],
           "sub": "Nyári Diana, Péterfi Bori és Fekete Ernő színészek, valamint Kalmár Péter író-producer."
         },
         {
@@ -232,7 +279,9 @@
           "min": 124,
           "rating": 12,
           "lang": "Magyar film",
-          "tags": ["Késő esti"],
+          "tags": [
+            "Késő esti"
+          ],
           "sub": "A fesztivál záró vetítése a főtéren: magyar film a hazatalálásról, éjszakai hangulatban."
         },
         {
@@ -242,7 +291,9 @@
           "min": 110,
           "rating": 16,
           "lang": "Magyar szinkron",
-          "tags": ["Késő esti"],
+          "tags": [
+            "Késő esti"
+          ],
           "sub": "Az animatronikus szörnyek visszatérnek: a videójáték-horror folytatása, késő esti sávban."
         }
       ]

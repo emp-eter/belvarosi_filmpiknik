@@ -9,13 +9,14 @@ export const days: Day[] = data.days;
 export const venues: Venue[] = venuesJson as Venue[];
 
 export const VENUE_NAMES: VenueName[] = ["Dobó tér", "Régi Kertmozi", "Agria Park udvar", "Uránia Mozi"];
-export const TAGS: Tag[] = ["Családi", "Késő esti", "Élő"];
+export const TAGS: Tag[] = ["Családi", "Késő esti", "Élő", "Kiállítás"];
 
 /** A "Jelleg" szűrő feliratai; az érték mögötti kulcs a tag maga. */
 export const TAG_LABELS: Record<Tag, string> = {
   "Családi": "Családi",
   "Késő esti": "Késő esti",
   "Élő": "Élő program",
+  "Kiállítás": "Kiállítás",
 };
 
 /** Minden programpont, napok szerint sorban. */
@@ -41,5 +42,5 @@ export const scheduledEntries: Entry[] = allEntries.filter((e) => !e.film.timeLa
 
 export const programmeCount = allEntries.length;
 
-/** Filmek száma: minden, ami nem élő program. */
-export const filmCount = allEntries.filter((e) => !e.film.tags.includes("Élő")).length;
+/** Filmek száma: minden, ami nem élő program és nem kiállítás. */
+export const filmCount = allEntries.filter((e) => !e.film.tags.includes("Élő") && !e.film.tags.includes("Kiállítás")).length;

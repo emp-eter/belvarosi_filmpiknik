@@ -1,5 +1,5 @@
 export type VenueName = "Dobó tér" | "Régi Kertmozi" | "Agria Park udvar" | "Uránia Mozi";
-export type Tag = "Élő" | "Családi" | "Késő esti";
+export type Tag = "Élő" | "Családi" | "Késő esti" | "Kiállítás";
 export type Lang = "Magyar film" | "Magyar szinkron";
 export type Rating = 6 | 12 | 16;
 
