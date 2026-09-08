@@ -1,7 +1,11 @@
 # Belvárosi Filmpiknik — cPanel / Apache
 # HTTPS kötelező: a megosztás és a vágólap csak biztonságos kontextusban működik.
 RewriteEngine On
+# A Let's Encrypt / AutoSSL ellenőrzése HTTP-n kéri le a /.well-known/ alatti
+# fájlokat: ezeket nem irányítjuk át, különben a tanúsítvány kiadása elbukik.
+RewriteRule ^\.well-known/ - [L]
 RewriteCond %{HTTPS} !=on
+RewriteCond %{REQUEST_URI} !^/\.well-known/
 RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
 
 # A Vite hash-elt fájljai (assets/index-*.js, *.css) örökre cache-elhetők,
