@@ -89,7 +89,8 @@ export function StoryOverlay({ story, onClose }: StoryOverlayProps) {
         onClick={(e) => e.stopPropagation()}
       >
         <div className={styles.card}>
-          <div className={styles.townscape} aria-hidden="true" />
+          <div className={styles.photo} aria-hidden="true" />
+          <div className={styles.veil} aria-hidden="true" />
           <div className={styles.cardInner}>
             <div>
               <div className={styles.wordmark}>{festival.shortName}</div>
