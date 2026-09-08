@@ -3,19 +3,20 @@ import { Button } from "../components/ui/Button";
 import { Chip } from "../components/ui/Chip";
 import { Icon, ICONS } from "../components/ui/Icon";
 import { days, entryKey, scheduledEntries, TAG_LABELS, TAGS, VENUE_NAMES } from "../data/programme";
-import type { Entry, Tag, VenueName } from "../data/types";
+import type { Tag, VenueName } from "../data/types";
 import { useEscape } from "../hooks/useEscape";
 import { useOverflowX } from "../hooks/useOverflowX";
 import { buildIcs, downloadIcs, eventFor, FESTIVAL_ICS_FILENAME } from "../lib/calendar";
 import { reveal } from "../lib/reveal";
 import { FilmCard } from "./FilmCard";
+import { festivalStory, storyForEntry, type Story } from "./StoryOverlay";
 import styles from "./Programme.module.css";
 
 type VenueFilter = VenueName | "Mind";
 type TagFilter = Tag | "Mind";
 
 interface ProgrammeProps {
-  onShare: (entry: Entry) => void;
+  onShare: (story: Story) => void;
 }
 
 export function Programme({ onShare }: ProgrammeProps) {
@@ -61,10 +62,16 @@ export function Programme({ onShare }: ProgrammeProps) {
         <h2 className={`reveal ${styles.title}`} style={reveal(0)}>
           A műsor
         </h2>
-        <Button variant="outlineGold" size="md" pill className="reveal" style={reveal(60)} onClick={addWholeFestival}>
-          <Icon path={ICONS.calendar} size={16} strokeWidth={1.7} />
-          Teljes fesztivál a naptáramba
-        </Button>
+        <div className={`reveal ${styles.headActions}`} style={reveal(60)}>
+          <Button variant="outlineGold" size="md" pill onClick={addWholeFestival}>
+            <Icon path={ICONS.calendar} size={16} strokeWidth={1.7} />
+            Teljes fesztivál a naptáramba
+          </Button>
+          <Button variant="outline" size="md" pill onClick={() => onShare(festivalStory())}>
+            <Icon path={ICONS.share} size={16} strokeWidth={1.7} />
+            Fesztivál megosztása
+          </Button>
+        </div>
       </div>
 
       <div className={`container ${styles.controls}`}>
@@ -110,7 +117,7 @@ export function Programme({ onShare }: ProgrammeProps) {
               calOpen={calMenu === key}
               onToggleCal={() => setCalMenu((cur) => (cur === key ? null : key))}
               onCloseCal={closeCal}
-              onShare={() => onShare({ day, film })}
+              onShare={() => onShare(storyForEntry({ day, film }))}
             />
           );
         })}

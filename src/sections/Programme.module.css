@@ -9,6 +9,11 @@
   gap: 18px;
   flex-wrap: wrap;
 }
+.headActions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
 .title {
   margin: 0;
   font-size: var(--size-h2);

@@ -107,7 +107,8 @@ A helyszínek koordinátái kézzel vannak elhelyezve, a Kertmozi szándékosan 
 
 ## Indulás előtt
 
-- [ ] Az `og:image` abszolút URL-je az `index.html`-ben a Pages-címre mutat; éles domainnél cserélni
+- [ ] Éles domainnél cserélni: `index.html` (`canonical`, `og:image`) és `programme.json` (`siteUrl`),
+      most a GitHub Pages címre mutatnak
 - [ ] Kanonikus URL ellenőrzése (`index.html` + `programme.json` → `siteUrl`)
 - [ ] Korhatárok és játékidők megerősítése a szervezőkkel (a *10 éjszakás kaland* és a *Nincs visszaút*
       maraton hossza hiányzik, a *Michael* és a *Backrooms* becslés)

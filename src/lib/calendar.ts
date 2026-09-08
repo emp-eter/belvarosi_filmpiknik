@@ -56,8 +56,8 @@ export function eventFor({ day, film }: Entry): CalendarEvent {
     endIso: iso(endMs),
     title: `${film.title} · ${festival.name}`,
     location: `${film.venue}, ${festival.city}`,
-    description: `${film.sub}\n\nIngyenes program. ${festival.url}`,
-    uid: `filmpiknik-${festival.year}-${slug(film.title)}-${stamp(startMs)}@uraniaeger.hu`,
+    description: `${film.sub}\n\nIngyenes program. ${festival.facebookEvent}`,
+    uid: `filmpiknik-${festival.year}-${slug(film.title)}-${stamp(startMs)}@belvarosifilmpiknik.eger`,
   };
 }
 
