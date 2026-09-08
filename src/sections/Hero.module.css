@@ -6,7 +6,7 @@
   overflow: hidden;
 }
 
-/* Rétegek: éjszakai gradiens (tartalék, amíg a fotó tölt) → fotó → portré → fátyol. */
+/* Rétegek: éjszakai gradiens (tartalék, amíg a fotó tölt) → fotó → fátyol. */
 .night {
   position: absolute;
   inset: 0;
@@ -20,43 +20,6 @@
   background-position: center top;
   background-repeat: no-repeat;
 }
-
-/* A vendégportré eredeti színekben, a megrendelő kérésére mindenféle szűrő nélkül
-   (nincs duotón, opacity, mask), jobbra lent, a fátyol fölött. */
-.portrait {
-  position: absolute;
-  right: max(0px, calc((100% - var(--measure)) / 2 - 40px));
-  bottom: 0;
-  height: min(78%, 720px, 190vw);
-  width: auto;
-  max-width: 62vw;
-  object-fit: contain;
-  object-position: right bottom;
-  pointer-events: none;
-  user-select: none;
-}
-/* Az oldal egyetlen media query-je: telefonon a portré nem a szöveg mögé kerül,
-   hanem a folyamban a szövegblokk fölé, jobbra igazítva. Szűrő nincs rajta. */
-@media (max-width: 640px) {
-  .hero {
-    flex-direction: column;
-    justify-content: flex-end;
-    align-items: stretch;
-  }
-  .portrait {
-    position: relative;
-    right: auto;
-    bottom: auto;
-    align-self: flex-end;
-    height: min(38vh, 340px);
-    max-width: 78vw;
-    margin: clamp(24px, 6vw, 40px) var(--gutter-x) 0 0;
-  }
-  .content {
-    padding-top: 8px;
-  }
-}
-
 .veil {
   position: absolute;
   inset: 0;
@@ -69,6 +32,21 @@
   max-width: var(--measure);
   margin: 0 auto;
   padding: clamp(44px, 8vw, 96px) var(--gutter-x) clamp(34px, 6vw, 68px);
+}
+
+/* A vendégportré eredeti színekben, a megrendelő kérésére mindenféle szűrő nélkül.
+   Asztalon a tartalomblokkhoz képest jobbra lent, a fátyol fölött. */
+.portrait {
+  position: absolute;
+  right: -40px;
+  bottom: 0;
+  height: min(72vh, 720px);
+  width: auto;
+  max-width: 44vw;
+  object-fit: contain;
+  object-position: right bottom;
+  pointer-events: none;
+  user-select: none;
 }
 
 .eyebrow {
@@ -126,4 +104,28 @@
   display: flex;
   flex-wrap: wrap;
   gap: 12px;
+}
+
+/* Az oldal egyetlen media query-je: telefonon a portré a cím mellett ül,
+   a cím keskenyebb oszlopban, a lead és a számláló alatta teljes szélességben. */
+@media (max-width: 640px) {
+  .top {
+    display: flex;
+    align-items: flex-end;
+    gap: 12px;
+  }
+  .titleBlock {
+    flex: 1 1 0;
+    min-width: 0;
+  }
+  .headline {
+    font-size: clamp(34px, 10.5vw, 44px);
+  }
+  .portrait {
+    position: static;
+    flex: 0 0 auto;
+    height: min(36vh, 320px);
+    max-width: 38vw;
+    margin-right: calc(var(--gutter-x) * -0.5);
+  }
 }
