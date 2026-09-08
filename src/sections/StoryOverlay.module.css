@@ -98,19 +98,6 @@
   line-height: 1.45;
   color: var(--rose-300);
 }
-.foot {
-  display: flex;
-  align-items: center;
-  gap: 1.6cqh;
-  flex-wrap: wrap;
-}
-.site {
-  font-size: max(11px, 2cqh);
-  font-weight: var(--weight-bold);
-  letter-spacing: 0.24cqh;
-  text-transform: uppercase;
-  color: var(--text-muted);
-}
 
 .actions {
   display: flex;

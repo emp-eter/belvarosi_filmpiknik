@@ -103,9 +103,6 @@ export function StoryOverlay({ story, onClose }: StoryOverlayProps) {
               <div className={styles.title}>{story.title}</div>
               <div className={styles.venue}>{story.venue}</div>
             </div>
-            <div className={styles.foot}>
-              <span className={styles.site}>Eger · A te városod</span>
-            </div>
           </div>
         </div>
 
