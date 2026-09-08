@@ -51,6 +51,10 @@ export function Programme({ onShare }: ProgrammeProps) {
     downloadIcs(FESTIVAL_ICS_FILENAME, buildIcs(scheduledEntries.map(eventFor)));
   };
 
+  /* Egyválasztós, de kapcsolható: az aktív chip újra megnyomva visszaáll "Mind"-re. */
+  const toggleVenue = (name: VenueFilter) => setVenueFilter((cur) => (cur === name ? "Mind" : name));
+  const toggleTag = (tag: TagFilter) => setTagFilter((cur) => (cur === tag ? "Mind" : tag));
+
   const clearFilters = () => {
     setVenueFilter("Mind");
     setTagFilter("Mind");
@@ -88,7 +92,7 @@ export function Programme({ onShare }: ProgrammeProps) {
             <span className={styles.filterLabel}>Helyszín</span>
             <div className={styles.chips}>
               {(["Mind", ...VENUE_NAMES] as VenueFilter[]).map((name) => (
-                <Chip key={name} active={venueFilter === name} onClick={() => setVenueFilter(name)}>
+                <Chip key={name} active={venueFilter === name} onClick={() => toggleVenue(name)}>
                   {name}
                 </Chip>
               ))}
@@ -98,7 +102,7 @@ export function Programme({ onShare }: ProgrammeProps) {
             <span className={styles.filterLabel}>Jelleg</span>
             <div className={styles.chips}>
               {(["Mind", ...TAGS] as TagFilter[]).map((tag) => (
-                <Chip key={tag} active={tagFilter === tag} onClick={() => setTagFilter(tag)}>
+                <Chip key={tag} active={tagFilter === tag} onClick={() => toggleTag(tag)}>
                   {tag === "Mind" ? "Mind" : TAG_LABELS[tag]}
                 </Chip>
               ))}
