@@ -106,7 +106,20 @@
   gap: 12px;
 }
 
-/* Az oldal egyetlen media query-je: telefonon a portré a cím mellett ül,
+/* Tablet-szélességen (641–1024px) a szöveg nem futhat a portré alá: a tartalom
+   jobb oldalán a portré szélességének megfelelő hely marad üresen. */
+@media (min-width: 641px) and (max-width: 1024px) {
+  .content {
+    padding-right: calc(var(--gutter-x) + 34vw);
+  }
+  .portrait {
+    right: calc(var(--gutter-x) * -1);
+    height: min(64vh, 640px);
+    max-width: 37vw;
+  }
+}
+
+/* Telefonon a portré a cím mellett ül,
    a cím keskenyebb oszlopban, a lead és a számláló alatta teljes szélességben. */
 @media (max-width: 640px) {
   .top {
